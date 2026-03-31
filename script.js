@@ -129,4 +129,126 @@ document.addEventListener('DOMContentLoaded', () => {
             if (icon) icon.className = 'fas fa-bars';
         });
     });
+
+    // --- Service Details Page Logic ---
+    const serviceData = {
+        'business': {
+            title: 'Business Setup',
+            subtitle: 'Start your entrepreneurial journey with zero hassle.',
+            desc: 'We provide end-to-end solutions for setting up your business in India. Whether you want to register a Private Limited Company, a Limited Liability Partnership (LLP), or a One Person Company (OPC), our experts handle all the paperwork while you focus on your vision.',
+            benefits: ['Digital Signature Certificate (DSC)', 'Director Identification Number (DIN)', 'Name Approval Support', 'MoA & AoA Drafting', 'Certificate of Incorporation', 'PAN & TAN Registration'],
+            faqs: [
+                { q: 'How long does it take to register a company?', a: 'Typically, it takes 10-15 working days, depending on the document verification and government approval timelines.' },
+                { q: 'What documents are required?', a: 'You need PAN, Aadhaar, address proof of directors, and proof of registered office address.' }
+            ]
+        },
+        'trademark': {
+            title: 'Trademark & IP',
+            subtitle: 'Protect your brand identity and intellectual property.',
+            desc: 'Your brand is your most valuable asset. Our IP experts help you register trademarks, copyrights, and patents to ensure your creative work and business identity are legally protected from infringement.',
+            benefits: ['Trademark Search Report', 'Logo & Wordmark Filing', 'Copyright Registration', 'Patent Application Support', 'Trademark Objection Handling', 'Renewal Services'],
+            faqs: [
+                { q: 'Why is trademark registration important?', a: 'It gives you exclusive rights to use your brand name/logo and prevents others from using similar marks that could confuse customers.' },
+                { q: 'Can I use the TM symbol immediately?', a: 'Yes, you can use the TM symbol as soon as the application is filed. You can use the ® symbol once the registration is complete.' }
+            ]
+        },
+        'tax': {
+            title: 'Tax & Compliance',
+            subtitle: 'Expert GST and Income Tax filing for peace of mind.',
+            desc: 'Stay compliant with the latest tax regulations. We handle GST registration, monthly/quarterly filings, Income Tax returns, and annual ROC compliances for businesses and individuals.',
+            benefits: ['GST Registration & Filing', 'Income Tax Return (ITR)', 'TDS Compliance', 'Annual ROC Filings', 'Tax Planning & Advisory', 'Audit Support'],
+            faqs: [
+                { q: 'What are the GST filing deadlines?', a: 'Deadlines vary based on the type of return (GSTR-1, GSTR-3B). Generally, they fall between the 11th and 20th of the following month.' },
+                { q: 'Is ITR mandatory for everyone?', a: 'ITR is mandatory if your total income exceeds the basic exemption limit or if you meet certain criteria like high electricity bills or foreign travel.' }
+            ]
+        },
+        'legal-talk': {
+            title: 'Legal Talk',
+            subtitle: 'Instant access to top legal minds for expert advice.',
+            desc: 'Get clear, actionable legal advice from verified experts. Whether it is a business contract, a personal dispute, or general legal queries, our lawyers are here to guide you.',
+            benefits: ['Verified Expert Network', 'Confidential Consultation', 'Actionable Legal Advice', 'Contract Review', 'Legal Notice Drafting', 'Case Strategy Support'],
+            faqs: [
+                { q: 'How do I book a call?', a: 'Simply select the service, choose your preferred slot, and complete the booking. You will receive a confirmation via WhatsApp.' },
+                { q: 'Is my information kept confidential?', a: 'Yes, all consultations are 100% confidential and protected by lawyer-client privilege.' }
+            ]
+        },
+        'property': {
+            title: 'Property Matters',
+            subtitle: 'Secure your real estate investments with legal verification.',
+            desc: 'Real estate transactions can be complex. We provide thorough property title verification, legal documentation, and registration support to ensure your property investments are safe and legal.',
+            benefits: ['Title Search & Verification', 'Sale Deed Drafting', 'Property Registration Support', 'Gift Deed & Power of Attorney', 'Lease Agreement Review', 'Legal Opinion Reports'],
+            faqs: [
+                { q: 'Why is title verification necessary?', a: 'It ensures that the seller has clear ownership and that the property is free from encumbrances, litigation, or legal disputes.' },
+                { q: 'Can you help with registration?', a: 'Yes, our experts guide you through the entire registration process at the Sub-Registrar office.' }
+            ]
+        },
+        'personal': {
+            title: 'Personal Legal',
+            subtitle: 'Sensitive legal support for family and personal matters.',
+            desc: 'We handle personal legal matters with the highest level of sensitivity and professionalism. From family law to consumer protection, we protect your personal rights.',
+            benefits: ['Divorce & Family Law', 'Will Drafting & Probate', 'Consumer Court Cases', 'Legal Heir Certificate', 'Marriage Registration', 'Adoption Legalities'],
+            faqs: [
+                { q: 'How can I draft a Will?', a: 'Our experts will help you draft a clear Will according to your wishes and ensure it is legally valid and registered if required.' },
+                { q: 'What is a legal heir certificate?', a: 'It is a document used to establish the relationship between the deceased and their legal heirs for claiming insurance, pensions, etc.' }
+            ]
+        }
+    };
+
+    function initServicePage() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const serviceKey = urlParams.get('service');
+        
+        if (serviceKey && serviceData[serviceKey]) {
+            const data = serviceData[serviceKey];
+            
+            // Set Titles
+            document.title = `${data.title} | Legal and Vakil`;
+            document.getElementById('service-title').textContent = data.title;
+            document.getElementById('service-subtitle').textContent = data.subtitle;
+            document.getElementById('service-desc').textContent = data.desc;
+
+            // Set Benefits
+            const benefitsList = document.getElementById('service-benefits');
+            if (benefitsList) {
+                benefitsList.innerHTML = data.benefits.map(benefit => `
+                    <div class="benefit-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>${benefit}</span>
+                    </div>
+                `).join('');
+            }
+
+            // Set FAQs
+            const faqList = document.getElementById('service-faq');
+            if (faqList) {
+                faqList.innerHTML = data.faqs.map(faq => `
+                    <div class="faq-item">
+                        <div class="faq-question">${faq.q} <i class="fas fa-chevron-down"></i></div>
+                        <div class="faq-answer">${faq.a}</div>
+                    </div>
+                `).join('');
+                
+                // Re-attach FAQ listeners
+                faqList.querySelectorAll('.faq-item').forEach(item => {
+                    item.addEventListener('click', () => {
+                        const answer = item.querySelector('.faq-answer');
+                        const icon = item.querySelector('.faq-question i');
+                        
+                        if (answer.style.display === 'block') {
+                            answer.style.display = 'none';
+                            icon.className = 'fas fa-chevron-down';
+                        } else {
+                            answer.style.display = 'block';
+                            icon.className = 'fas fa-chevron-up';
+                        }
+                    });
+                });
+            }
+        }
+    }
+
+    // Call init if we are on the details page
+    if (window.location.pathname.includes('service-details.html')) {
+        initServicePage();
+    }
 });

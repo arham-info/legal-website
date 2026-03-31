@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Services | Legal and Vakil</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .directory-header {
+            padding: 120px 0 60px;
+            background: linear-gradient(135deg, var(--primary) 0%, #001f3f 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .search-container {
+            max-width: 700px;
+            margin: 40px auto 0;
+            position: relative;
+        }
+
+        .search-container input {
+            width: 100%;
+            padding: 18px 25px 18px 55px;
+            border-radius: 50px;
+            border: none;
+            font-size: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            outline: none;
+        }
+
+        .search-container i {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--primary);
+            font-size: 20px;
+        }
+
+        .category-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .tab {
+            padding: 10px 25px;
+            border-radius: 50px;
+            background: rgba(255,255,255,0.1);
+            color: white;
+            cursor: pointer;
+            transition: 0.3s;
+            font-weight: 500;
+        }
+
+        .tab.active, .tab:hover {
+            background: var(--secondary);
+            color: var(--primary);
+        }
+
+        .services-directory {
+            padding: 80px 0;
+        }
+
+        .service-category-head {
+            margin-bottom: 40px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .service-category-head i {
+            color: var(--secondary);
+            font-size: 24px;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .service-card {
+            background: white;
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 4px solid transparent;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-top-color: var(--secondary);
+        }
+
+        .service-card i {
+            font-size: 40px;
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        .service-card p {
+            font-size: 15px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .directory-header { padding: 100px 20px 40px; }
+            .grid-3 { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <a href="index.html" class="logo">LEGAL AND<span> VAKIL</span></a>
+            <ul class="nav-links">
+                <li><a href="services.html" class="active">Services</a></li>
+                <li><a href="lawyers.html">Find a Lawyer</a></li>
+                <li><a href="#">Property</a></li>
+                <li><a href="#">Business</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+            </ul>
+            <div class="nav-btns">
+                <a href="#" class="btn btn-outline">Login</a>
+                <a href="#" class="btn btn-primary" style="margin-left: 10px;">Consult Now</a>
+            </div>
+            <div class="menu-toggle" id="mobile-menu" style="display: none; font-size: 24px; cursor: pointer; color: var(--primary);">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Directory Hero -->
+    <section class="directory-header">
+        <div class="container reveal-onload">
+            <h1>Our Legal & Business Services</h1>
+            <p>Explore over 50+ services designed to simplify your legal journey.</p>
+            
+            <div class="search-container">
+                <i class="fas fa-search"></i>
+                <input type="text" id="service-search" placeholder="Search for 'GST registration', 'MSME', 'Trademark'...">
+            </div>
+
+            <div class="category-tabs" id="service-tabs">
+                <div class="tab active" data-category="all">All Services</div>
+                <div class="tab" data-category="startup">Registration & Startup</div>
+                <div class="tab" data-category="tax">Tax & Accounting</div>
+                <div class="tab" data-category="legal">Personal Legal</div>
+                <div class="tab" data-category="compliance">Compliance</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Directory -->
+    <section class="services-directory">
+        <div class="container">
+            <div id="services-container">
+                <!-- Grouped services will be rendered here by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="padding: 60px 0 20px; background: var(--primary); color: white;">
+        <div class="container">
+            <div style="text-align: center; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 30px; margin-bottom: 20px;">
+                <a href="index.html" class="logo" style="color: #fff;">LEGAL AND<span> VAKIL</span></a>
+                <p style="max-width: 500px; margin: 15px auto;">Simplifying legal, tax, and compliance for everyone.</p>
+            </div>
+            <div class="footer-bottom" style="text-align: center; opacity: 0.6; font-size: 14px;">
+                &copy; 2026 Legal and Vakil. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -181,6 +181,7 @@
                 <li><a href="#">Property</a></li>
                 <li><a href="#">Business</a></li>
                 <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
             </ul>
             <div class="nav-btns">
                 <a href="#" class="btn btn-outline">Login</a>
@@ -251,26 +252,54 @@
                 </div>
 
                 <div class="sidebar" id="booking">
-                    <div class="booking-card reveal">
-                        <h3>Schedule a Call</h3>
+                    <div class="card reveal" style="border-top: 4px solid var(--secondary);">
+                        <h3 style="margin-bottom: 10px; color: var(--primary);">Schedule a Call</h3>
                         <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 25px;">Verified expert responds within 2 hours</p>
-                        <form class="inquiry-form">
-                            <label>Full Name</label>
-                            <input type="text" placeholder="e.g. John Doe" required>
-                            
-                            <label>Choose Service</label>
-                            <select required>
-                                <option value="" disabled selected>Select a service</option>
-                                <option>Corporate Law Advice</option>
-                                <option>Tax & GST Consulting</option>
-                                <option>Property Verification</option>
-                                <option>Personal Legal Advice</option>
-                            </select>
-
-                            <label>Your Message</label>
-                            <textarea placeholder="Briefly describe your query" rows="4" required></textarea>
-                            
-                            <button type="submit" class="btn btn-primary" style="width: 100%;">Book My Slot</button>
+                        <form id="detailsContactForm">
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                                <div class="form-group">
+                                    <label for="firstName">First Name</label>
+                                    <input type="text" id="firstName" placeholder="John" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="lastName">Last Name</label>
+                                    <input type="text" id="lastName" placeholder="Doe" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" placeholder="john@example.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" placeholder="+91 98765 43210" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Choose Service</label>
+                                <select id="subject" required>
+                                    <option value="" disabled selected>Select a service</option>
+                                    <option value="debt">Debt Issue</option>
+                                    <option value="marriage">Marriage Consultation</option>
+                                    <option value="loan">Loan Settlement</option>
+                                    <option value="gst">GST Filing & Issues</option>
+                                    <option value="notary">Notary Services</option>
+                                    <option value="rera">RERA Compliance</option>
+                                    <option value="cyber">Cyber Law</option>
+                                    <option value="ip">Intellectual Property</option>
+                                    <option value="employment">Employment Law</option>
+                                    <option value="rental">Rental Agreements</option>
+                                    <option value="will">Will & Succession</option>
+                                    <option value="consumer">Consumer Protection</option>
+                                    <option value="business">Business Setup</option>
+                                    <option value="tax">Tax & Compliance</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Your Message</label>
+                                <textarea id="message" rows="4" placeholder="How can we help you?" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary" style="width: 100%; padding: 15px;">Book My Slot</button>
                         </form>
                     </div>
                 </div>
@@ -292,5 +321,19 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        document.getElementById('detailsContactForm')?.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const btn = this.querySelector('button');
+            btn.disabled = true;
+            btn.textContent = 'Booking...';
+            setTimeout(() => {
+                alert('Success! Your booking request has been sent. The expert will contact you shortly.');
+                btn.disabled = false;
+                btn.textContent = 'Book My Slot';
+                this.reset();
+            }, 1500);
+        });
+    </script>
 </body>
 </html>

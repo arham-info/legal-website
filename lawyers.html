@@ -144,6 +144,7 @@
                 <li><a href="#">Property</a></li>
                 <li><a href="#">Business</a></li>
                 <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
             </ul>
             <div class="nav-btns">
                 <a href="#" class="btn btn-outline">Login</a>
@@ -222,7 +223,7 @@
                             class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                     <h3>Adv. Vikram Sethi</h3>
                     <p>Corporate Law | 15+ Yrs Exp</p>
-                    <a href="lawyer-details.html?id=vikram" class="btn btn-outline" style="margin-top: 15px;">Book
+                    <a href="lawyer-details.html?id=vikram" class="btn btn-outline book-call-btn" data-lawyer="Adv. Vikram Sethi" style="margin-top: 15px;">Book
                         Call</a>
                 </div>
                 <div class="expert-card">
@@ -234,7 +235,7 @@
                     </div>
                     <h3>CA Neha Gupta</h3>
                     <p>Taxation & GST | 10+ Yrs Exp</p>
-                    <a href="lawyer-details.html?id=neha" class="btn btn-outline" style="margin-top: 15px;">Book
+                    <a href="lawyer-details.html?id=neha" class="btn btn-outline book-call-btn" data-lawyer="CA Neha Gupta" style="margin-top: 15px;">Book
                         Call</a>
                 </div>
                 <div class="expert-card">
@@ -245,7 +246,7 @@
                             class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                     <h3>Adv. Rajesh Mehra</h3>
                     <p>Property & Civil | 20+ Yrs Exp</p>
-                    <a href="lawyer-details.html?id=rajesh" class="btn btn-outline" style="margin-top: 15px;">Book
+                    <a href="lawyer-details.html?id=rajesh" class="btn btn-outline book-call-btn" data-lawyer="Adv. Rajesh Mehra" style="margin-top: 15px;">Book
                         Call</a>
                 </div>
                 <div class="expert-card">
@@ -256,7 +257,7 @@
                             class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                     <h3>CS Anjali Verma</h3>
                     <p>Compliance | 8+ Yrs Exp</p>
-                    <a href="lawyer-details.html?id=anjali" class="btn btn-outline" style="margin-top: 15px;">Book
+                    <a href="lawyer-details.html?id=anjali" class="btn btn-outline book-call-btn" data-lawyer="CS Anjali Verma" style="margin-top: 15px;">Book
                         Call</a>
                 </div>
             </div>
@@ -279,6 +280,106 @@
     </footer>
 
     <script src="script.js"></script>
+
+    <!-- Contact Modal -->
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalLawyerName">Consult with Expert</h2>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <form id="modalContactForm">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                        <div class="form-group">
+                            <label for="modalFirstName">First Name</label>
+                            <input type="text" id="modalFirstName" placeholder="John" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="modalLastName">Last Name</label>
+                            <input type="text" id="modalLastName" placeholder="Doe" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="modalEmail">Email Address</label>
+                        <input type="email" id="modalEmail" placeholder="john@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="modalPhone">Phone Number</label>
+                        <input type="tel" id="modalPhone" placeholder="+91 98765 43210" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="modalSubject">Inquiry Subject</label>
+                        <select id="modalSubject">
+                            <option value="" disabled selected>Select Inquiry Subject</option>
+                            <option value="debt">Debt Issue</option>
+                            <option value="marriage">Marriage Consultation</option>
+                            <option value="loan">Loan Settlement</option>
+                            <option value="gst">GST Filing & Issues</option>
+                            <option value="notary">Notary Services</option>
+                            <option value="rera">RERA Compliance</option>
+                            <option value="cyber">Cyber Law</option>
+                            <option value="ip">Intellectual Property</option>
+                            <option value="employment">Employment Law</option>
+                            <option value="rental">Rental Agreements</option>
+                            <option value="will">Will & Succession</option>
+                            <option value="consumer">Consumer Protection</option>
+                            <option value="business">Business Setup</option>
+                            <option value="tax">Tax & Compliance</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="modalMessage">Your Message</label>
+                        <textarea id="modalMessage" rows="4" placeholder="How can we help you?" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%; padding: 15px;">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Modal Logic
+        const modal = document.getElementById("contactModal");
+        const closeBtn = document.querySelector(".close-modal");
+
+        // Use event delegation for dynamically rendered cards
+        document.addEventListener('click', function(e) {
+            if (e.target && e.target.classList.contains('book-call-btn')) {
+                e.preventDefault();
+                const lawyerName = e.target.getAttribute('data-lawyer');
+                if (lawyerName) {
+                    document.getElementById('modalLawyerName').textContent = 'Consult with ' + lawyerName;
+                }
+                modal.style.display = "block";
+            }
+        });
+
+        closeBtn.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        document.getElementById('modalContactForm').onsubmit = function(e) {
+            e.preventDefault();
+            const btn = this.querySelector('button');
+            btn.disabled = true;
+            btn.textContent = 'Sending...';
+            setTimeout(() => {
+                alert('Success! Your request has been sent. The expert will contact you shortly.');
+                modal.style.display = "none";
+                btn.disabled = false;
+                btn.textContent = 'Send Message';
+                this.reset();
+            }, 1500);
+        }
+    </script>
 </body>
 
 </html>

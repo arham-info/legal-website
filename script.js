@@ -140,7 +140,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
                 <h3>${ex.name}</h3>
                 <p>${ex.subtitle}</p>
-                <a href="lawyer-details.html?id=${ex.id}" class="btn btn-outline" style="width: 100%;">Book Call</a>
+                <a href="lawyer-details.html?id=${ex.id}" class="btn btn-outline book-call-btn" data-lawyer="${ex.name}" style="width: 100%;">Book Call</a>
             </div>`).join('') || '<p>No experts found matching your criteria.</p>';
         document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
     }

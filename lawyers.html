@@ -369,15 +369,32 @@
         document.getElementById('modalContactForm').onsubmit = function(e) {
             e.preventDefault();
             const btn = this.querySelector('button');
+            const originalText = btn.textContent;
             btn.disabled = true;
             btn.textContent = 'Sending...';
-            setTimeout(() => {
-                alert('Success! Your request has been sent. The expert will contact you shortly.');
-                modal.style.display = "none";
+
+            // Prepare form data
+            const formData = {
+                name: document.getElementById('modalFirstName').value,
+                surname: document.getElementById('modalLastName').value,
+                email: document.getElementById('modalEmail').value,
+                phone: document.getElementById('modalPhone').value,
+                service: document.getElementById('modalSubject').value,
+                message: document.getElementById('modalMessage').value
+            };
+
+            // Call the global submission function
+            window.submitToGoogleSheet(formData).then(success => {
+                if (success) {
+                    alert('Success! Your request has been sent. The expert will contact you shortly.');
+                    modal.style.display = "none";
+                    this.reset();
+                } else {
+                    alert('Oops! Something went wrong. Please try again later.');
+                }
                 btn.disabled = false;
-                btn.textContent = 'Send Message';
-                this.reset();
-            }, 1500);
+                btn.textContent = originalText;
+            });
         }
     </script>
 </body>

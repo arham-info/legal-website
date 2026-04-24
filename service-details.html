@@ -76,8 +76,16 @@
             padding: 12px 15px;
             margin-bottom: 15px;
             border-radius: 5px;
-            border: none;
+            border: 1px solid rgba(255,255,255,0.1);
+            background: rgba(255,255,255,1);
+            color: var(--primary);
             outline: none;
+            transition: var(--transition);
+        }
+
+        .inquiry-form input:focus, .inquiry-form textarea:focus {
+            border-color: var(--secondary);
+            box-shadow: 0 0 0 3px rgba(197, 160, 89, 0.2);
         }
 
         .process-steps {
@@ -193,11 +201,11 @@
                     <div class="sidebar-card reveal">
                         <h3>Talk to an Expert</h3>
                         <p style="font-size: 14px; opacity: 0.8; margin-bottom: 25px;">Get instant answers for your query</p>
-                        <form class="inquiry-form">
-                            <input type="text" placeholder="Full Name" required>
-                            <input type="email" placeholder="Email Address" required>
-                            <input type="tel" placeholder="Mobile Number" required>
-                            <textarea placeholder="Tell us about your requirement" rows="4" required></textarea>
+                        <form class="inquiry-form" id="serviceInquiryForm">
+                            <input type="text" id="fullName" placeholder="Full Name" required>
+                            <input type="email" id="email" placeholder="Email Address" required>
+                            <input type="tel" id="phone" placeholder="Mobile Number" required>
+                            <textarea id="message" placeholder="Tell us about your requirement" rows="4" required></textarea>
                             <button type="submit" class="btn btn-outline" style="width: 100%; border-color: white; color: white;">Submit Inquiry</button>
                         </form>
                         <div style="margin-top: 25px; text-align: center; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px;">
@@ -225,5 +233,41 @@
 
     <script type="module" src="firebase-analytics.js"></script>
     <script src="script.js"></script>
+    <script>
+        document.getElementById('serviceInquiryForm')?.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const btn = this.querySelector('button');
+            const originalText = btn.textContent;
+            btn.disabled = true;
+            btn.textContent = 'Submitting...';
+
+            // Split name into name and surname if possible
+            const fullNames = document.getElementById('fullName').value.trim().split(' ');
+            const firstName = fullNames[0] || '';
+            const lastName = fullNames.slice(1).join(' ') || '';
+
+            // Prepare form data
+            const formData = {
+                name: firstName,
+                surname: lastName,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                service: document.getElementById('service-title')?.textContent || 'Service Inquiry',
+                message: document.getElementById('message').value
+            };
+
+            // Call the global submission function
+            window.submitToGoogleSheet(formData).then(success => {
+                if (success) {
+                    alert('Thank you! Your inquiry has been submitted successfully.');
+                    this.reset();
+                } else {
+                    alert('Oops! Something went wrong. Please try again later.');
+                }
+                btn.disabled = false;
+                btn.textContent = originalText;
+            });
+        });
+    </script>
 </body>
 </html>

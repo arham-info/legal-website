@@ -194,4 +194,27 @@ document.addEventListener('DOMContentLoaded', () => {
             document.getElementById('expert-img').src = data.img;
         }
     }
+
+    // --- Form Submission to Google Sheets ---
+    window.submitToGoogleSheet = async (formData) => {
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwsPMk0hJJWqS8vh9bFZpHvUSfmh_Sz3O3OPRDzSqZJoSNvwB5z47fxHnztLB1P7tPO/exec';
+        
+        try {
+            // Sending as JSON string in the body
+            // We use 'text/plain' to avoid CORS preflight (OPTIONS) which Apps Script doesn't handle well
+            await fetch(scriptURL, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: {
+                    'Content-Type': 'text/plain'
+                },
+                body: JSON.stringify(formData)
+            });
+
+            return true;
+        } catch (error) {
+            console.error('Error submitting to Google Sheet:', error);
+            return false;
+        }
+    };
 });

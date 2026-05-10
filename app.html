@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Legal and Vakil App</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      font-family:'Poppins',sans-serif;
+      background:#0f172a;
+      color:#fff;
+      overflow-x:hidden;
+    }
+
+    .app-promo{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:40px 20px;
+      position:relative;
+      background:
+      radial-gradient(circle at top right,#d4af3720,transparent 25%),
+      radial-gradient(circle at bottom left,#ffffff10,transparent 25%),
+      linear-gradient(135deg,#0f172a,#111827,#1e293b);
+    }
+
+    .app-promo::before{
+      content:"";
+      position:absolute;
+      width:500px;
+      height:500px;
+      background:#d4af3720;
+      filter:blur(120px);
+      top:-120px;
+      right:-100px;
+      border-radius:50%;
+    }
+
+    .container{
+      width:100%;
+      max-width:1200px;
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+      align-items:center;
+      gap:60px;
+      z-index:2;
+    }
+
+    .content h2{
+      font-size:58px;
+      line-height:1.1;
+      margin-bottom:24px;
+      font-weight:700;
+      color:#fff;
+    }
+
+    .content h2 span{
+      color:#d4af37;
+    }
+
+    .content p{
+      font-size:18px;
+      line-height:1.8;
+      color:#d1d5db;
+      max-width:550px;
+      margin-bottom:40px;
+    }
+
+    .app-btns{
+      display:flex;
+      flex-wrap:wrap;
+      gap:20px;
+    }
+
+    .app-btn{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      padding:18px 30px;
+      border-radius:16px;
+      text-decoration:none;
+      color:#fff;
+      font-size:17px;
+      font-weight:600;
+      transition:0.35s ease;
+      background:rgba(255,255,255,0.08);
+      border:1px solid rgba(255,255,255,0.12);
+      backdrop-filter:blur(14px);
+      box-shadow:0 8px 30px rgba(0,0,0,0.3);
+    }
+
+    .app-btn i{
+      font-size:26px;
+      color:#d4af37;
+    }
+
+    .app-btn:hover{
+      transform:translateY(-5px);
+      background:#d4af37;
+      color:#111827;
+    }
+
+    .app-btn:hover i{
+      color:#111827;
+    }
+
+    .phone-preview{
+      display:flex;
+      justify-content:center;
+      position:relative;
+    }
+
+    .phone{
+      width:320px;
+      border-radius:40px;
+      padding:14px;
+      background:#111827;
+      border:2px solid rgba(255,255,255,0.08);
+      box-shadow:
+      0 25px 60px rgba(0,0,0,0.55),
+      0 0 0 10px rgba(255,255,255,0.03);
+      position:relative;
+    }
+
+    .phone::before{
+      content:"";
+      width:120px;
+      height:24px;
+      background:#000;
+      border-radius:20px;
+      position:absolute;
+      top:10px;
+      left:50%;
+      transform:translateX(-50%);
+      z-index:2;
+    }
+
+    .screen{
+      background:linear-gradient(180deg,#1e293b,#0f172a);
+      border-radius:30px;
+      overflow:hidden;
+      padding:30px 24px;
+      min-height:620px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+    }
+
+    .logo{
+      width:90px;
+      height:90px;
+      border-radius:24px;
+      background:#d4af37;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      margin-bottom:24px;
+      box-shadow:0 10px 30px rgba(212,175,55,0.35);
+    }
+
+    .logo i{
+      font-size:42px;
+      color:#111827;
+    }
+
+    .screen h3{
+      font-size:32px;
+      margin-bottom:12px;
+      color:#fff;
+    }
+
+    .screen p{
+      color:#cbd5e1;
+      font-size:15px;
+      line-height:1.7;
+      margin-bottom:30px;
+    }
+
+    .features{
+      width:100%;
+      display:flex;
+      flex-direction:column;
+      gap:14px;
+    }
+
+    .feature{
+      background:rgba(255,255,255,0.05);
+      padding:16px;
+      border-radius:14px;
+      text-align:left;
+      display:flex;
+      align-items:center;
+      gap:14px;
+      border:1px solid rgba(255,255,255,0.06);
+    }
+
+    .feature i{
+      width:44px;
+      height:44px;
+      border-radius:12px;
+      background:#d4af37;
+      color:#111827;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:18px;
+      flex-shrink:0;
+    }
+
+    .feature span{
+      font-size:15px;
+      color:#f8fafc;
+      font-weight:500;
+    }
+
+    @media(max-width:768px){
+
+      .content{
+        text-align:center;
+      }
+
+      .content h2{
+        font-size:42px;
+      }
+
+      .content p{
+        margin:auto auto 35px;
+      }
+
+      .app-btns{
+        justify-content:center;
+      }
+
+      .phone{
+        width:290px;
+      }
+
+    }
+  </style>
+</head>
+
+<body>
+
+<section class="app-promo">
+
+  <div class="container">
+
+    <div class="content">
+      <h2>
+        Legal and Vakil <br>
+        <span>on Your Phone</span>
+      </h2>
+
+      <p>
+        Download the Legal and Vakil app to track your cases,
+        upload documents, connect with legal experts,
+        and get genuine legal guidance anytime, anywhere.
+      </p>
+
+      <div class="app-btns">
+
+        <a href="https://apps.apple.com/in/app/legal-and-vakil/id6764749848" class="app-btn">
+          <i class="fab fa-apple"></i>
+          Download on App Store
+        </a>
+
+        <a href="https://play.google.com/store/apps/details?id=com.arhaminfo.legalandvakil" class="app-btn">
+          <i class="fab fa-google-play"></i>
+          Get it on Google Play
+        </a>
+
+      </div>
+    </div>
+
+    <div class="phone-preview">
+
+      <div class="phone">
+
+        <div class="screen">
+
+          <div class="logo">
+            <i class="fas fa-scale-balanced"></i>
+          </div>
+
+          <h3>Legal & Vakil</h3>
+
+          <p>
+            Trusted legal services with genuine advice,
+            now available directly on your smartphone.
+          </p>
+
+          <div class="features">
+
+            <div class="feature">
+              <i class="fas fa-gavel"></i>
+              <span>Track Legal Cases</span>
+            </div>
+
+            <div class="feature">
+              <i class="fas fa-file-upload"></i>
+              <span>Upload Documents Securely</span>
+            </div>
+
+            <div class="feature">
+              <i class="fas fa-comments"></i>
+              <span>Chat with Legal Experts</span>
+            </div>
+
+            <div class="feature">
+              <i class="fas fa-shield-halved"></i>
+              <span>Trusted & Genuine Advice</span>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+</body>
+</html>

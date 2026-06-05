@@ -11,7 +11,8 @@
     <link rel="stylesheet" href="style.css">
     <style>
         body {
-            background-color: #f4f7f9;
+            background-color: var(--bg-light);
+            color: var(--text-main);
             display: flex;
             min-height: 100vh;
         }
@@ -19,13 +20,14 @@
         /* Dashboard Layout */
         .sidebar {
             width: 260px;
-            background: var(--primary);
+            background: var(--bg-card);
             color: white;
             padding: 30px 20px;
             display: flex;
             flex-direction: column;
             position: fixed;
             height: 100vh;
+            border-right: 1px solid var(--border-color);
         }
 
         .sidebar .logo {
@@ -51,7 +53,7 @@
         }
 
         .menu-item:hover, .menu-item.active {
-            background: rgba(255,255,255,0.1);
+            background: rgba(255,255,255,0.05);
             opacity: 1;
         }
 
@@ -87,7 +89,7 @@
             align-items: center;
             justify-content: center;
             font-weight: bold;
-            color: white;
+            color: #070c14;
         }
 
         .stats-grid {
@@ -98,13 +100,14 @@
         }
 
         .stat-card {
-            background: white;
+            background: var(--bg-card);
             padding: 25px;
             border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            box-shadow: var(--shadow);
             display: flex;
             align-items: center;
             gap: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.02);
         }
 
         .stat-icon {
@@ -117,11 +120,11 @@
             font-size: 24px;
         }
 
-        .stat-icon.blue { background: rgba(1, 30, 65, 0.1); color: var(--primary); }
-        .stat-icon.gold { background: rgba(197, 160, 89, 0.1); color: var(--secondary); }
-        .stat-icon.green { background: rgba(40, 167, 69, 0.1); color: #28a745; }
+        .stat-icon.blue { background: rgba(59, 130, 246, 0.15); color: #3b82f6; }
+        .stat-icon.gold { background: rgba(251, 191, 36, 0.15); color: var(--secondary); }
+        .stat-icon.green { background: rgba(16, 185, 129, 0.15); color: #10b981; }
 
-        .stat-info h3 { font-size: 28px; margin-bottom: 5px; }
+        .stat-info h3 { font-size: 28px; margin-bottom: 5px; color: #ffffff; }
         .stat-info p { color: var(--text-muted); font-size: 14px; }
 
         .dashboard-body {
@@ -131,10 +134,11 @@
         }
 
         .card {
-            background: white;
+            background: var(--bg-card);
             padding: 30px;
             border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(255, 255, 255, 0.02);
             overflow: hidden; /* Prevent table overflow */
         }
 
@@ -143,7 +147,7 @@
             justify-content: space-between;
             align-items: center;
             margin-bottom: 25px;
-            color: var(--primary);
+            color: var(--text-main);
         }
 
         .table-responsive {
@@ -161,14 +165,15 @@
         .consult-table th {
             text-align: left;
             padding: 15px;
-            border-bottom: 1px solid #eee;
+            border-bottom: 1px solid var(--border-color);
             color: var(--text-muted);
             font-weight: 500;
         }
 
         .consult-table td {
             padding: 15px;
-            border-bottom: 1px solid #eee;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-main);
         }
 
         .status-pill {
@@ -178,8 +183,8 @@
             font-weight: 600;
         }
 
-        .status-pill.success { background: #e6f7ef; color: #28a745; }
-        .status-pill.warning { background: #fff8e6; color: #f0ad4e; }
+        .status-pill.success { background: rgba(16, 185, 129, 0.15); color: #10b981; }
+        .status-pill.warning { background: rgba(245, 158, 11, 0.15); color: #f59e0b; }
 
         /* Small screen adjustments */
         @media (max-width: 992px) {
@@ -200,11 +205,13 @@
                 padding: 10px;
                 justify-content: center;
                 gap: 10px;
+                border-right: none;
+                border-bottom: 1px solid var(--border-color);
             }
             .sidebar .menu-item { margin-bottom: 0; padding: 10px; }
             .main-content { margin-left: 0; padding: 20px; }
             .dash-header { flex-direction: column; align-items: flex-start; gap: 20px; }
-            .user-profile { width: 100%; justify-content: space-between; border-top: 1px solid #eee; padding-top: 20px; }
+            .user-profile { width: 100%; justify-content: space-between; border-top: 1px solid var(--border-color); padding-top: 20px; }
             .stat-card { flex-direction: column; text-align: center; }
         }
     </style>
@@ -337,11 +344,11 @@
                     <h3>Required Documents</h3>
                 </div>
                 <div class="doc-list" style="display: flex; flex-direction: column; gap: 15px;">
-                    <div style="padding: 15px; border: 1px dashed #ccc; border-radius: 8px;">
+                    <div style="padding: 15px; border: 1px dashed var(--border-color); border-radius: 8px;">
                         <p style="font-size: 14px; margin-bottom: 5px;"><strong>Aadhar Card</strong></p>
                         <a href="#" style="font-size: 12px; color: var(--secondary);">Upload Now</a>
                     </div>
-                    <div style="padding: 15px; border: 1px dashed #ccc; border-radius: 8px;">
+                    <div style="padding: 15px; border: 1px dashed var(--border-color); border-radius: 8px;">
                         <p style="font-size: 14px; margin-bottom: 5px;"><strong>Property Sale Deed</strong></p>
                         <a href="#" style="font-size: 12px; color: var(--secondary);">Upload Now</a>
                     </div>

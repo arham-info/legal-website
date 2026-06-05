@@ -12,7 +12,7 @@
     <style>
         .directory-header {
             padding: 120px 0 60px;
-            background: linear-gradient(135deg, var(--primary) 0%, #001f3f 100%);
+            background: linear-gradient(135deg, #0a111e 0%, #070c14 100%);
             color: white;
             text-align: center;
         }
@@ -27,10 +27,16 @@
             width: 100%;
             padding: 18px 25px 18px 55px;
             border-radius: 50px;
-            border: none;
+            border: 1px solid var(--border-color);
+            background: var(--bg-card);
+            color: var(--text-main);
             font-size: 16px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
             outline: none;
+        }
+
+        .search-container input::placeholder {
+            color: var(--text-muted);
         }
 
         .search-container i {
@@ -38,7 +44,7 @@
             left: 20px;
             top: 50%;
             transform: translateY(-50%);
-            color: var(--primary);
+            color: var(--secondary);
             font-size: 20px;
         }
 
@@ -62,7 +68,7 @@
 
         .tab.active, .tab:hover {
             background: var(--secondary);
-            color: var(--primary);
+            color: #070c14;
         }
 
         .services-directory {
@@ -71,11 +77,15 @@
 
         .service-category-head {
             margin-bottom: 40px;
-            border-bottom: 2px solid #eee;
+            border-bottom: 2px solid var(--border-color);
             padding-bottom: 10px;
             display: flex;
             align-items: center;
             gap: 15px;
+        }
+
+        .service-category-head h2 {
+            color: #ffffff;
         }
 
         .service-category-head i {
@@ -91,12 +101,15 @@
         }
 
         .service-card {
-            background: white;
+            background: var(--bg-card);
             padding: 35px;
             border-radius: 12px;
             box-shadow: var(--shadow);
             transition: transform 0.3s, box-shadow 0.3s;
             border-top: 4px solid transparent;
+            border-left: 1px solid rgba(255, 255, 255, 0.02);
+            border-right: 1px solid rgba(255, 255, 255, 0.02);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.02);
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -105,6 +118,7 @@
         .service-card:hover {
             transform: translateY(-10px);
             border-top-color: var(--secondary);
+            background: var(--bg-card-hover);
         }
 
         .service-card i {
@@ -116,7 +130,7 @@
         .service-card h3 {
             font-size: 22px;
             margin-bottom: 15px;
-            color: var(--primary);
+            color: var(--text-main);
         }
 
         .service-card p {
@@ -150,7 +164,7 @@
                 <a href="#" class="btn btn-outline">Login</a>
                 <a href="#" class="btn btn-primary" style="margin-left: 10px;">Consult Now</a>
             </div>
-            <div class="menu-toggle" id="mobile-menu" style="display: none; font-size: 24px; cursor: pointer; color: var(--primary);">
+            <div class="menu-toggle" id="mobile-menu" style="display: none; font-size: 24px; cursor: pointer; color: var(--secondary);">
                 <i class="fas fa-bars"></i>
             </div>
         </nav>

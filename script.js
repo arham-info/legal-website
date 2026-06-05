@@ -529,12 +529,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 html = list.map(lawyer => `
                     <div class="lawyer-card-horizontal reveal active">
                         <div class="lawyer-img-wrapper">
-                            <img src="${lawyer.img}" alt="${lawyer.name}">
+                            <a href="lawyer-details.html?id=${lawyer.id}"><img src="${lawyer.img}" alt="${lawyer.name}" style="transition: var(--transition);"></a>
                         </div>
                         <div class="lawyer-details-mid">
-                            <div class="lawyer-details-header">
-                                <h3>${lawyer.name}</h3>
-                                <i class="fas fa-check-circle lawyer-verified-icon" title="Verified Expert"></i>
+                            <div class="lawyer-details-header" style="align-items: center;">
+                                <a href="lawyer-details.html?id=${lawyer.id}" style="text-decoration: none; color: inherit;"><h3 style="margin: 0; font-size: 18px; font-weight: 700; transition: var(--transition);">${lawyer.name}</h3></a>
+                                <i class="fas fa-check-circle lawyer-verified-icon" title="Verified Expert" style="margin-left: 8px;"></i>
                                 ${lawyer.available ? `<span class="lawyer-availability-badge" style="padding: 2px 8px; font-size:10px; margin-left:10px;">Available</span>` : ''}
                             </div>
                             <div class="lawyer-mid-specialty">${lawyer.specialty}</div>
@@ -557,8 +557,9 @@ document.addEventListener('DOMContentLoaded', () => {
                                 <span class="fee-discounted">₹${lawyer.consultFee}</span>
                             </div>
                             <span class="fee-offer-text">Limited Time Offer</span>
-                            <a href="#" class="btn btn-primary book-call-btn" data-id="${lawyer.id}">Book @ ₹${lawyer.consultFee}</a>
-                            <span class="fee-guarantee-text"><i class="fas fa-shield-halved"></i> 100% Confidential</span>
+                            <a href="#" class="btn btn-primary book-call-btn" data-id="${lawyer.id}" style="width: 100%;">Book @ ₹${lawyer.consultFee}</a>
+                            <a href="lawyer-details.html?id=${lawyer.id}" class="btn btn-outline" style="width: 100%; padding: 10px; margin-top: 8px; font-size: 13px; border-radius: 6px;">View Profile</a>
+                            <span class="fee-guarantee-text" style="margin-top: 8px;"><i class="fas fa-shield-halved"></i> 100% Confidential</span>
                         </div>
                     </div>
                 `).join('');
@@ -987,4 +988,33 @@ document.addEventListener('DOMContentLoaded', () => {
             return false;
         }
     };
+
+    // Dynamic Header login state manager
+    const navActions = document.querySelector('.nav-actions');
+    if (navActions) {
+        const loggedIn = localStorage.getItem('userLoggedIn') === 'true';
+        if (loggedIn) {
+            const userName = localStorage.getItem('userName') || 'Rahul Sharma';
+            const initials = userName.split(' ').map(n => n[0]).join('').slice(0, 2).toUpperCase();
+            
+            navActions.innerHTML = `
+                <a href="profile.html" class="btn btn-outline" style="padding: 8px 18px; border-radius: 6px; display: inline-flex; align-items: center; gap: 8px;">
+                    <span style="width: 20px; height: 20px; border-radius: 50%; background: var(--secondary); color: var(--primary); display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 700;">${initials}</span>
+                    Profile
+                </a>
+                <a href="#" id="logout-nav-btn" class="btn btn-primary" style="padding: 8px 18px; border-radius: 6px;">Logout</a>
+            `;
+            
+            // Add listener to logout button
+            const logoutBtn = document.getElementById('logout-nav-btn');
+            if (logoutBtn) {
+                logoutBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    localStorage.removeItem('userLoggedIn');
+                    alert('Logged out successfully!');
+                    window.location.href = 'index.html';
+                });
+            }
+        }
+    }
 });

@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="style.css">
     <style>
         body {
-            background-color: var(--bg-light);
+            background-color: var(--bg-neutral);
             color: var(--text-main);
             display: flex;
             min-height: 100vh;
@@ -20,7 +20,7 @@
         /* Dashboard Layout */
         .sidebar {
             width: 260px;
-            background: var(--bg-card);
+            background: var(--primary);
             color: white;
             padding: 30px 20px;
             display: flex;
@@ -220,7 +220,14 @@
 
     <!-- Sidebar -->
     <div class="sidebar">
-        <a href="index.html" class="logo">LEGAL AND<span> VAKIL</span></a>
+        <a href="index.html" class="logo-container" style="text-decoration: none; margin-bottom: 40px; display: inline-flex; align-items: center; gap: 10px;">
+            <div class="logo-icon" style="width: 36px; height: 36px; font-size: 15px; flex-shrink: 0; background: var(--secondary); color: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                <i class="fas fa-scale-balanced"></i>
+            </div>
+            <div class="logo-text" style="display: flex; flex-direction: column;">
+                <span class="logo-title" style="color: white; font-size: 18px; font-weight: 800; line-height: 1.1;">Legal & <span style="color: var(--secondary);">Vakil</span></span>
+            </div>
+        </a>
         <div class="sidebar-menu">
             <a href="dashboard.html" style="text-decoration: none; color: inherit;">
                 <div class="menu-item active">

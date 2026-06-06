@@ -3,119 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login | Legal & Vakil</title>
+    <title>Refund Policy | Legal & Vakil</title>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
     <style>
-        .auth-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 80px 0;
-            background-color: var(--bg-neutral);
-        }
-
-        .auth-card {
-            background-color: var(--bg-card);
-            border: 1px solid var(--border-color);
+        .policy-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 50px;
             border-radius: 12px;
-            padding: 40px;
-            width: 100%;
-            max-width: 450px;
-            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-sm);
         }
-
-        .auth-header {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        .auth-header h2 {
-            font-size: 24px;
-            font-weight: 800;
+        .policy-content h2 {
+            font-size: 22px;
             color: var(--primary);
-            margin-bottom: 8px;
+            margin-top: 35px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 8px;
         }
-
-        .auth-header p {
-            font-size: 14px;
-            color: var(--text-muted);
-        }
-
-        .auth-form .form-group {
+        .policy-content p {
+            font-size: 15px;
+            line-height: 1.7;
+            color: var(--text-main);
             margin-bottom: 20px;
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
         }
-
-        .auth-form label {
-            font-size: 13.5px;
-            font-weight: 600;
+        .policy-content ul {
+            margin-left: 20px;
+            margin-bottom: 20px;
+            list-style-type: disc;
+        }
+        .policy-content li {
+            font-size: 15px;
+            line-height: 1.6;
             color: var(--text-main);
+            margin-bottom: 10px;
         }
-
-        .auth-form input[type="email"],
-        .auth-form input[type="password"] {
-            width: 100%;
-            padding: 12px 16px;
-            border-radius: 8px;
-            border: 1.5px solid var(--border-color);
-            background-color: white;
-            color: var(--text-main);
-            font-family: inherit;
-            font-size: 14px;
-            transition: var(--transition);
-        }
-
-        .auth-form input[type="email"]:focus,
-        .auth-form input[type="password"]:focus {
-            outline: none;
-            border-color: var(--secondary);
-            box-shadow: 0 0 0 3px rgba(251, 191, 36, 0.15);
-        }
-
-        .auth-meta-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 13px;
-            margin-bottom: 25px;
-        }
-
-        .checkbox-container {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            cursor: pointer;
-            color: var(--text-muted);
-        }
-
-        .auth-meta-row a {
-            color: var(--secondary);
-            font-weight: 600;
-        }
-
-        .auth-meta-row a:hover {
-            text-decoration: underline;
-        }
-
-        .auth-card-footer {
-            text-align: center;
-            margin-top: 25px;
+        .policy-date {
             font-size: 13.5px;
             color: var(--text-muted);
-        }
-
-        .auth-card-footer a {
-            color: var(--secondary);
-            font-weight: 600;
-        }
-
-        .auth-card-footer a:hover {
-            text-decoration: underline;
+            margin-bottom: 30px;
+            font-style: italic;
         }
     </style>
 </head>
@@ -159,7 +91,7 @@
 
                 <div class="nav-actions">
                     <i class="fas fa-magnifying-glass search-icon-btn"></i>
-                    <a href="login.html" class="btn btn-outline" style="padding: 8px 18px; border-radius: 6px; background-color: var(--border-color);">Login</a>
+                    <a href="login.html" class="btn btn-outline" style="padding: 8px 18px; border-radius: 6px;">Login</a>
                     <a href="signup.html" class="btn btn-primary" style="padding: 8px 18px; border-radius: 6px;">Sign Up</a>
                 </div>
             </nav>
@@ -171,41 +103,46 @@
         <div class="container">
             <a href="index.html">Home</a>
             <span>&gt;</span>
-            <span class="active">Login</span>
+            <span class="active">Refund Policy</span>
         </div>
     </div>
 
-    <!-- Login Container -->
-    <section class="auth-container">
-        <div class="auth-card reveal-onload">
-            <div class="auth-header">
-                <h2>Welcome Back</h2>
-                <p>Log in to access your consultations and legal documents.</p>
+    <!-- Hero Section -->
+    <section class="directory-hero">
+        <div class="container">
+            <div class="directory-hero-content reveal-onload" style="max-width: 100%; text-align: center; margin: 0 auto;">
+                <h1>Refund Policy</h1>
+                <p>Simple and transparent refund guidelines. We offer 100% refund guarantee for missed sessions.</p>
             </div>
-            
-            <form class="auth-form" id="loginForm">
-                <div class="form-group">
-                    <label for="login-email">Email Address</label>
-                    <input type="email" id="login-email" placeholder="rahul@example.com" required>
+        </div>
+    </section>
+
+    <!-- Content Section -->
+    <section style="padding: 80px 0; background-color: var(--bg-light);">
+        <div class="container">
+            <div class="policy-container reveal-onload">
+                <div class="policy-date">Last Updated: June 6, 2026</div>
+                <div class="policy-content">
+                    <h2>1. Cancellation & Rescheduling</h2>
+                    <p>Users can cancel or reschedule booking sessions up to 2 hours prior to the scheduled consultation session without incurring any fees. Cancellations requested less than 2 hours before the session are not eligible for a refund.</p>
+
+                    <h2>2. 100% Refund Guarantee</h2>
+                    <p>You are entitled to a full 100% refund of the consultation fee paid if:</p>
+                    <ul>
+                        <li>The assigned lawyer or professional consultant fails to join or attend the scheduled consultation.</li>
+                        <li>A platform technical error prevents the consultation from taking place.</li>
+                        <li>The consultation booking is rejected or cancelled by the lawyer beforehand.</li>
+                    </ul>
+
+                    <h2>3. Claims Timeline</h2>
+                    <p>To claim a refund under the 100% refund guarantee, you must notify our customer support team at <a href="mailto:admin@legalandvakil.com" style="color:var(--secondary-hover); font-weight:600;">admin@legalandvakil.com</a> within 24 hours of the scheduled consultation time. Refund requests submitted after 24 hours of the scheduled time will not be processed.</p>
+
+                    <h2>4. Processing Timelines</h2>
+                    <p>Once a refund request is reviewed and approved by our support team, the refund is processed and automatically credited back to the user's original source of payment (credit card, debit card, or UPI wallet). The refund typically appears in your account statement within 5 to 7 business days.</p>
+
+                    <h2>5. Dispute Resolution</h2>
+                    <p>For any disputes regarding service quality, document draft deliveries, or CA/CS filings, please get in touch with our Support Center or submit a query on the Contact Us page. Our team is committed to resolving billing disputes fairly and quickly.</p>
                 </div>
-                <div class="form-group">
-                    <label for="login-password">Password</label>
-                    <input type="password" id="login-password" placeholder="••••••••" required>
-                </div>
-                
-                <div class="auth-meta-row">
-                    <label class="checkbox-container">
-                        <input type="checkbox" id="remember-me">
-                        <span>Remember Me</span>
-                    </label>
-                    <a href="#">Forgot Password?</a>
-                </div>
-                
-                <button type="submit" class="btn btn-primary" style="width: 100%; padding: 14px; border-radius: 8px;">Log In</button>
-            </form>
-            
-            <div class="auth-card-footer">
-                Don't have an account? <a href="signup.html">Sign Up</a>
             </div>
         </div>
     </section>
@@ -286,30 +223,12 @@
         </div>
     </footer>
 
-    <!-- Form redirection script -->
-    <script>
-        document.getElementById('loginForm').addEventListener('submit', (e) => {
-            e.preventDefault();
-            const submitBtn = e.target.querySelector('button[type="submit"]');
-            submitBtn.textContent = 'Logging in...';
-            submitBtn.disabled = true;
-            
-            // Mock login data storing
-            localStorage.setItem('userLoggedIn', 'true');
-            localStorage.setItem('userName', 'Rahul Sharma');
-            localStorage.setItem('userEmail', document.getElementById('login-email').value || 'rahul@example.com');
-            
-            setTimeout(() => {
-                window.location.href = 'index.html';
-            }, 800);
-        });
-    </script>
-
     <!-- Floating WhatsApp Button -->
     <a href="https://wa.me/919296500296?text=Hello%20Legal%20%26%20Vakil,%20I%20have%20a%20legal%20query." class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
 
+    <!-- Main JavaScript -->
     <script src="script.js"></script>
 </body>
 </html>

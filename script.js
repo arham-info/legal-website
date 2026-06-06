@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
             title: 'Marriage Consultation',
             category: 'legal',
             icon: 'fa-rings-wedding',
+            image: 'assets/marriage.webp',
             shortDesc: 'Divorce, Alimony, Child Custody, Marriage Disputes',
             subtitle: 'Legal guidance for a stronger, legally secure relationship.',
             desc: 'Get expert guidance on marriage registration, prenuptial agreements, mutual separations, child custody, and domestic disputes. We help protect your rights and assets through professional legal counsel.',
@@ -27,6 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
             title: 'Online Dispute Resolution (ODR)',
             category: 'legal',
             icon: 'fa-laptop-code',
+            image: 'assets/odr.webp',
             shortDesc: 'Resolve disputes online quickly & legally',
             subtitle: 'Fast-track legal resolution without visiting courts.',
             desc: 'Settle commercial, property, family or contractual disputes through online arbitration, mediation and conciliation. Legal, secure, and completed in a fraction of court times.',
@@ -39,6 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
             title: 'Challans & Traffic Matters',
             category: 'legal',
             icon: 'fa-traffic-light',
+            image: 'https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&q=80&w=600',
             shortDesc: 'Challan disputes, license issues, traffic violations',
             subtitle: 'Resolve traffic challans and vehicle disputes legally.',
             desc: 'Faced with a wrongful traffic challan or need representation in court for a vehicle-related offence? Get representation and legal guidance to clear your name and records.',
@@ -51,6 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
             title: 'Property Disputes',
             category: 'legal',
             icon: 'fa-house-chimney-crack',
+            image: 'assets/property.webp',
             shortDesc: 'Property conflicts, ownership, rent agreements',
             subtitle: 'Secure your real estate investments and clear disputes.',
             desc: 'Comprehensive solutions for ancestral property disputes, tenant evictions, title verifications, builder delays, and RERA complaints. Our experts ensure your assets remain safe.',
@@ -63,6 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
             title: 'Debt & Loan Issues',
             category: 'legal',
             icon: 'fa-sack-dollar',
+            image: 'assets/loan.webp',
             shortDesc: 'Loan recovery, settlements, financial disputes',
             subtitle: 'Settle outstanding debts and stop harassment.',
             desc: 'Struggling with loan repayments, credit card debts, or recovery agent harassment? Get professional settlement negotiations and legal notices drafted by expert financial lawyers.',
@@ -75,6 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
             title: 'Intellectual Property',
             category: 'startup',
             icon: 'fa-lightbulb',
+            image: 'assets/intellectual property.webp',
             shortDesc: 'Copyrights, Trademarks, Patents, IP Registration',
             subtitle: 'Protect your brand name, inventions, and creative assets.',
             desc: 'Full-service IP protection. We handle trademark searches & filings, copyright registrations, patent drafting, and IP infringement litigations to protect your business assets.',
@@ -87,6 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
             title: 'Business & Corporate Law',
             category: 'startup',
             icon: 'fa-briefcase',
+            image: 'assets/company registration.webp',
             shortDesc: 'Company registration, contracts, legal compliance',
             subtitle: 'End-to-end setup and annual compliance for your business.',
             desc: 'Start your business as a Private Limited Company, LLP, or OPC. We draft contracts (founder agreements, NDA, vendor contracts) and manage ROC compliance to keep your company audit-ready.',
@@ -99,6 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
             title: 'Criminal Defense',
             category: 'legal',
             icon: 'fa-shield-halved',
+            image: 'assets/Cyber fraud.webp',
             shortDesc: 'Bail, FIR, Appeals, Criminal disputes',
             subtitle: 'Robust representation for your civil liberties.',
             desc: 'Protect your legal rights during emergencies. Get immediate support for anticipatory bail, regular bails, quashing of FIRs under Section 482, and representation in district courts & high courts.',
@@ -728,14 +736,19 @@ document.addEventListener('DOMContentLoaded', () => {
             // Document Title
             document.title = `${data.title} Services | Legal & Vakil`;
 
-            // Titles
+            // Titles & Image
             const sTitle = document.getElementById('service-detail-title');
             const sSubtitle = document.getElementById('service-detail-subtitle');
             const sOverview = document.getElementById('service-detail-overview');
+            const sImage = document.getElementById('service-detail-image');
             
             if (sTitle) sTitle.textContent = data.title;
             if (sSubtitle) sSubtitle.textContent = data.subtitle;
             if (sOverview) sOverview.textContent = data.desc;
+            if (sImage && data.image) {
+                sImage.src = data.image;
+                sImage.alt = data.title;
+            }
 
             // Service details bullets in hero
             const sBullets = document.getElementById('service-hero-bullets');

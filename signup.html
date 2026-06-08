@@ -3,11 +3,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Legal & Business Services | Legal & Vakil</title>
+    <title>Sign Up | Legal & Vakil</title>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
+    <style>
+        .auth-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 80px 0;
+            background-color: var(--bg-neutral);
+        }
+
+        .auth-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 40px;
+            width: 100%;
+            max-width: 480px;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .auth-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .auth-header h2 {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+
+        .auth-header p {
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        .auth-form .form-group {
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .auth-form label {
+            font-size: 13.5px;
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        .auth-form input[type="text"],
+        .auth-form input[type="email"],
+        .auth-form input[type="password"] {
+            width: 100%;
+            padding: 12px 16px;
+            border-radius: 8px;
+            border: 1.5px solid var(--border-color);
+            background-color: white;
+            color: var(--text-main);
+            font-family: inherit;
+            font-size: 14px;
+            transition: var(--transition);
+        }
+
+        .auth-form input[type="text"]:focus,
+        .auth-form input[type="email"]:focus,
+        .auth-form input[type="password"]:focus {
+            outline: none;
+            border-color: var(--secondary);
+            box-shadow: 0 0 0 3px rgba(251, 191, 36, 0.15);
+        }
+
+        .auth-meta-row {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            font-size: 13px;
+            margin-bottom: 25px;
+        }
+
+        .checkbox-container {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            color: var(--text-muted);
+        }
+
+        .checkbox-container a {
+            color: var(--secondary);
+            font-weight: 600;
+        }
+
+        .checkbox-container a:hover {
+            text-decoration: underline;
+        }
+
+        .auth-card-footer {
+            text-align: center;
+            margin-top: 25px;
+            font-size: 13.5px;
+            color: var(--text-muted);
+        }
+
+        .auth-card-footer a {
+            color: var(--secondary);
+            font-weight: 600;
+        }
+
+        .auth-card-footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
 
@@ -29,7 +141,7 @@
                     <li><a href="index.html">Home</a></li>
                     <li><a href="lawyers.html">Find Lawyers</a></li>
                     <li class="dropdown">
-                        <a href="services.html" class="active">Services <i class="fas fa-chevron-down" style="font-size: 10px; margin-left: 2px;"></i></a>
+                        <a href="services.html">Services <i class="fas fa-chevron-down" style="font-size: 10px; margin-left: 2px;"></i></a>
                         <ul class="dropdown-menu">
                             <li><a href="service-details.html?service=marriage">Marriage Consultation</a></li>
                             <li><a href="service-details.html?service=odr">ODR Services</a></li>
@@ -50,55 +162,56 @@
                 <div class="nav-actions">
                     <a href="search.html" style="color: inherit; text-decoration: none;" aria-label="Search"><i class="fas fa-magnifying-glass search-icon-btn"></i></a>
                     <a href="login.html" class="btn btn-outline" style="padding: 8px 18px; border-radius: 6px;">Login</a>
-                    <a href="signup.html" class="btn btn-primary" style="padding: 8px 18px; border-radius: 6px;">Sign Up</a>
+                    <a href="signup.html" class="btn btn-primary" style="padding: 8px 18px; border-radius: 6px; background-color: var(--secondary-hover); color: var(--primary);">Sign Up</a>
                 </div>
             </nav>
         </div>
     </header>
 
-    <!-- Directory Hero -->
-    <section class="directory-hero">
+    <!-- Breadcrumbs -->
+    <div class="breadcrumbs-bar">
         <div class="container">
-            <div class="directory-hero-content reveal-onload" style="max-width: 100%; text-align: center; margin: 0 auto;">
-                <h1>Our Legal & Business Services</h1>
-                <p>Explore over 50+ services designed to simplify your legal journey.</p>
-                
-                <!-- Search bar in Hero -->
-                <div class="search-box" style="margin-top: 30px; margin-bottom: 30px; max-width:680px; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.15);">
-                    <input type="text" id="service-search" placeholder="Search for 'GST registration', 'MSME', 'Trademark'..." style="padding-left: 30px; color:white;">
-                    <button class="btn btn-primary" style="border-radius: 50px; padding: 12px 35px;"><i class="fas fa-search"></i> Search</button>
-                </div>
-
-                <!-- Tabs -->
-                <div class="pricing-toggle-wrapper" style="gap: 12px; margin-bottom: 0; flex-wrap: wrap;">
-                    <button class="tab active" data-category="all" style="padding: 10px 24px; border-radius: 50px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); color: white; font-weight:600; cursor:pointer; font-family:inherit; transition:var(--transition);">All Services</button>
-                    <button class="tab" data-category="startup" style="padding: 10px 24px; border-radius: 50px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); color: white; font-weight:600; cursor:pointer; font-family:inherit; transition:var(--transition);">Registration & Startup</button>
-                    <button class="tab" data-category="tax" style="padding: 10px 24px; border-radius: 50px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); color: white; font-weight:600; cursor:pointer; font-family:inherit; transition:var(--transition);">Tax & Accounting</button>
-                    <button class="tab" data-category="legal" style="padding: 10px 24px; border-radius: 50px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); color: white; font-weight:600; cursor:pointer; font-family:inherit; transition:var(--transition);">Personal Legal</button>
-                </div>
-            </div>
+            <a href="index.html">Home</a>
+            <span>&gt;</span>
+            <span class="active">Sign Up</span>
         </div>
-    </section>
+    </div>
 
-    <!-- Services Directory Grid Container -->
-    <section class="directory-section" style="background-color: var(--bg-light);">
-        <div class="container">
-            <div id="services-container">
-                <!-- Grouped service cards populated dynamically by script.js -->
+    <!-- Signup Container -->
+    <section class="auth-container">
+        <div class="auth-card reveal-onload">
+            <div class="auth-header">
+                <h2>Create Account</h2>
+                <p>Join Legal & Vakil to manage your consultations, reviews, and legal agreements.</p>
             </div>
-
-            <!-- Custom styling for services page tabs active states -->
-            <style>
-                .tab.active {
-                    background-color: var(--secondary) !important;
-                    color: var(--primary) !important;
-                    border-color: var(--secondary) !important;
-                }
-                .tab:hover:not(.active) {
-                    background-color: rgba(255,255,255,0.15) !important;
-                    color: white !important;
-                }
-            </style>
+            
+            <form class="auth-form" id="signupForm">
+                <div class="form-group">
+                    <label for="signup-name">Full Name</label>
+                    <input type="text" id="signup-name" placeholder="John Doe" required>
+                </div>
+                <div class="form-group">
+                    <label for="signup-email">Email Address</label>
+                    <input type="email" id="signup-email" placeholder="john@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="signup-password">Password</label>
+                    <input type="password" id="signup-password" placeholder="Min. 8 characters" minlength="8" required>
+                </div>
+                
+                <div class="auth-meta-row">
+                    <label class="checkbox-container">
+                        <input type="checkbox" required>
+                        <span>I agree to the <a href="#">Terms of Service</a> & <a href="#">Privacy Policy</a></span>
+                    </label>
+                </div>
+                
+                <button type="submit" class="btn btn-primary" style="width: 100%; padding: 14px; border-radius: 8px;">Create Account</button>
+            </form>
+            
+            <div class="auth-card-footer">
+                Already have an account? <a href="login.html">Login</a>
+            </div>
         </div>
     </section>
 
@@ -178,65 +291,31 @@
         </div>
     </footer>
 
-    <!-- Booking Modal -->
-    <div id="bookingModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3>Book Consultation</h3>
-                <button class="close-modal">&times;</button>
-            </div>
-            <div class="modal-body">
-                <form id="bookingForm">
-                    <input type="hidden" id="modal-lawyer-id" value="">
-                    <div class="form-group">
-                        <label for="book-name">Full Name</label>
-                        <input type="text" id="book-name" placeholder="John Doe" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="book-email">Email Address</label>
-                        <input type="email" id="book-email" placeholder="john@example.com" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="book-phone">Phone Number</label>
-                        <input type="tel" id="book-phone" placeholder="+91 92965 00296" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="book-subject">Inquiry Subject</label>
-                        <select id="book-subject" required>
-                            <option value="" disabled selected>Select Inquiry Subject</option>
-                            <option value="Marriage Consultation">Marriage Consultation</option>
-                            <option value="Online Dispute Resolution">Online Dispute Resolution</option>
-                            <option value="Property Disputes">Property Disputes</option>
-                            <option value="Business setup & Legal">Business setup & Legal</option>
-                            <option value="Criminal Defense">Criminal Defense</option>
-                            <option value="Debt & Loan Issues">Debt & Loan Issues</option>
-                            <option value="Trademark & Patents">Trademark & Patents</option>
-                            <option value="Other Legal Help">Other Legal Help</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="book-message">Your Message</label>
-                        <textarea id="book-message" rows="4" placeholder="Briefly describe your legal requirement..." required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary" style="width: 100%; padding: 14px;">Confirm & Book Call</button>
-                </form>
-            </div>
-        </div>
-    </div>
-
-    <!-- Status Feedback Modal -->
-    <div id="statusModal" class="modal">
-        <div class="status-modal-content" id="status-modal-body">
-            <!-- Populated dynamically by JS -->
-        </div>
-    </div>
+    <!-- Form script -->
+    <script>
+        document.getElementById('signupForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const submitBtn = e.target.querySelector('button[type="submit"]');
+            submitBtn.textContent = 'Registering...';
+            submitBtn.disabled = true;
+            
+            // Mock signup values
+            localStorage.setItem('userRegistered', 'true');
+            localStorage.setItem('registeredName', document.getElementById('signup-name').value);
+            localStorage.setItem('registeredEmail', document.getElementById('signup-email').value);
+            
+            setTimeout(() => {
+                alert('Account created successfully! Redirecting to login page...');
+                window.location.href = 'login.html';
+            }, 800);
+        });
+    </script>
 
     <!-- Floating WhatsApp Button -->
     <a href="https://wa.me/919296500296?text=Hello%20Legal%20%26%20Vakil,%20I%20have%20a%20legal%20query." class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <!-- Main JavaScript -->
     <script src="script.js"></script>
 </body>
 </html>

@@ -3,11 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Legal & Business Services | Legal & Vakil</title>
+    <title>Privacy Policy | Legal & Vakil</title>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
+    <style>
+        .policy-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 50px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-sm);
+        }
+        .policy-content h2 {
+            font-size: 22px;
+            color: var(--primary);
+            margin-top: 35px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 8px;
+        }
+        .policy-content p {
+            font-size: 15px;
+            line-height: 1.7;
+            color: var(--text-main);
+            margin-bottom: 20px;
+        }
+        .policy-content ul {
+            margin-left: 20px;
+            margin-bottom: 20px;
+            list-style-type: disc;
+        }
+        .policy-content li {
+            font-size: 15px;
+            line-height: 1.6;
+            color: var(--text-main);
+            margin-bottom: 10px;
+        }
+        .policy-date {
+            font-size: 13.5px;
+            color: var(--text-muted);
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+    </style>
 </head>
 <body>
 
@@ -29,7 +71,7 @@
                     <li><a href="index.html">Home</a></li>
                     <li><a href="lawyers.html">Find Lawyers</a></li>
                     <li class="dropdown">
-                        <a href="services.html" class="active">Services <i class="fas fa-chevron-down" style="font-size: 10px; margin-left: 2px;"></i></a>
+                        <a href="services.html">Services <i class="fas fa-chevron-down" style="font-size: 10px; margin-left: 2px;"></i></a>
                         <ul class="dropdown-menu">
                             <li><a href="service-details.html?service=marriage">Marriage Consultation</a></li>
                             <li><a href="service-details.html?service=odr">ODR Services</a></li>
@@ -56,49 +98,58 @@
         </div>
     </header>
 
-    <!-- Directory Hero -->
+    <!-- Breadcrumbs -->
+    <div class="breadcrumbs-bar">
+        <div class="container">
+            <a href="index.html">Home</a>
+            <span>&gt;</span>
+            <span class="active">Privacy Policy</span>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
     <section class="directory-hero">
         <div class="container">
             <div class="directory-hero-content reveal-onload" style="max-width: 100%; text-align: center; margin: 0 auto;">
-                <h1>Our Legal & Business Services</h1>
-                <p>Explore over 50+ services designed to simplify your legal journey.</p>
-                
-                <!-- Search bar in Hero -->
-                <div class="search-box" style="margin-top: 30px; margin-bottom: 30px; max-width:680px; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.15);">
-                    <input type="text" id="service-search" placeholder="Search for 'GST registration', 'MSME', 'Trademark'..." style="padding-left: 30px; color:white;">
-                    <button class="btn btn-primary" style="border-radius: 50px; padding: 12px 35px;"><i class="fas fa-search"></i> Search</button>
-                </div>
-
-                <!-- Tabs -->
-                <div class="pricing-toggle-wrapper" style="gap: 12px; margin-bottom: 0; flex-wrap: wrap;">
-                    <button class="tab active" data-category="all" style="padding: 10px 24px; border-radius: 50px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); color: white; font-weight:600; cursor:pointer; font-family:inherit; transition:var(--transition);">All Services</button>
-                    <button class="tab" data-category="startup" style="padding: 10px 24px; border-radius: 50px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); color: white; font-weight:600; cursor:pointer; font-family:inherit; transition:var(--transition);">Registration & Startup</button>
-                    <button class="tab" data-category="tax" style="padding: 10px 24px; border-radius: 50px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); color: white; font-weight:600; cursor:pointer; font-family:inherit; transition:var(--transition);">Tax & Accounting</button>
-                    <button class="tab" data-category="legal" style="padding: 10px 24px; border-radius: 50px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); color: white; font-weight:600; cursor:pointer; font-family:inherit; transition:var(--transition);">Personal Legal</button>
-                </div>
+                <h1>Privacy Policy</h1>
+                <p>We respect your privacy and protect all legal documents and data with encryption.</p>
             </div>
         </div>
     </section>
 
-    <!-- Services Directory Grid Container -->
-    <section class="directory-section" style="background-color: var(--bg-light);">
+    <!-- Content Section -->
+    <section style="padding: 80px 0; background-color: var(--bg-light);">
         <div class="container">
-            <div id="services-container">
-                <!-- Grouped service cards populated dynamically by script.js -->
-            </div>
+            <div class="policy-container reveal-onload">
+                <div class="policy-date">Last Updated: June 6, 2026</div>
+                <div class="policy-content">
+                    <h2>1. Information We Collect</h2>
+                    <p>We collect personal information that you proactively provide when registering on our Website, filling out inquiry forms, or booking consultations. This includes:</p>
+                    <ul>
+                        <li>Full Name and contact details (email address, phone number).</li>
+                        <li>Brief descriptions of your legal requirements or case details.</li>
+                        <li>Billing and payment information processed by our secure payment partners.</li>
+                    </ul>
 
-            <!-- Custom styling for services page tabs active states -->
-            <style>
-                .tab.active {
-                    background-color: var(--secondary) !important;
-                    color: var(--primary) !important;
-                    border-color: var(--secondary) !important;
-                }
-                .tab:hover:not(.active) {
-                    background-color: rgba(255,255,255,0.15) !important;
-                    color: white !important;
-                }
-            </style>
+                    <h2>2. How We Use Your Information</h2>
+                    <p>The information we collect is used to:</p>
+                    <ul>
+                        <li>Assign you to the most qualified independent lawyer or consultant for your case.</li>
+                        <li>Facilitate booking sessions, confirm payments, and deliver consultation scheduling.</li>
+                        <li>Respond to inquiries, provide user support, and improve the platform design.</li>
+                        <li>Send automated consultation updates and legal newsletters (if subscribed).</li>
+                    </ul>
+
+                    <h2>3. Data Confidentiality & Privilege</h2>
+                    <p>We take confidentiality seriously. All details regarding cases, chats, document reviews, and communications with independent professionals remain strictly privileged. We enforce industry-standard security practices to prevent unauthorized access or sharing of your case data.</p>
+
+                    <h2>4. Data Sharing and Third Parties</h2>
+                    <p>We do not sell, rent, or lease your personal information. Your details are shared exclusively with the assigned professional to complete the requested consultation or legal service. We may also share transactions with payment processors to complete checkouts safely.</p>
+
+                    <h2>5. Security Standards</h2>
+                    <p>We use encrypted communication protocols (HTTPS) and partner with PCI-DSS compliant payment gateways to process transactions. Although we use top security practices, no digital storage is 100% secure, and we cannot guarantee absolute security.</p>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -177,59 +228,6 @@
             </div>
         </div>
     </footer>
-
-    <!-- Booking Modal -->
-    <div id="bookingModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3>Book Consultation</h3>
-                <button class="close-modal">&times;</button>
-            </div>
-            <div class="modal-body">
-                <form id="bookingForm">
-                    <input type="hidden" id="modal-lawyer-id" value="">
-                    <div class="form-group">
-                        <label for="book-name">Full Name</label>
-                        <input type="text" id="book-name" placeholder="John Doe" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="book-email">Email Address</label>
-                        <input type="email" id="book-email" placeholder="john@example.com" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="book-phone">Phone Number</label>
-                        <input type="tel" id="book-phone" placeholder="+91 92965 00296" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="book-subject">Inquiry Subject</label>
-                        <select id="book-subject" required>
-                            <option value="" disabled selected>Select Inquiry Subject</option>
-                            <option value="Marriage Consultation">Marriage Consultation</option>
-                            <option value="Online Dispute Resolution">Online Dispute Resolution</option>
-                            <option value="Property Disputes">Property Disputes</option>
-                            <option value="Business setup & Legal">Business setup & Legal</option>
-                            <option value="Criminal Defense">Criminal Defense</option>
-                            <option value="Debt & Loan Issues">Debt & Loan Issues</option>
-                            <option value="Trademark & Patents">Trademark & Patents</option>
-                            <option value="Other Legal Help">Other Legal Help</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="book-message">Your Message</label>
-                        <textarea id="book-message" rows="4" placeholder="Briefly describe your legal requirement..." required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary" style="width: 100%; padding: 14px;">Confirm & Book Call</button>
-                </form>
-            </div>
-        </div>
-    </div>
-
-    <!-- Status Feedback Modal -->
-    <div id="statusModal" class="modal">
-        <div class="status-modal-content" id="status-modal-body">
-            <!-- Populated dynamically by JS -->
-        </div>
-    </div>
 
     <!-- Floating WhatsApp Button -->
     <a href="https://wa.me/919296500296?text=Hello%20Legal%20%26%20Vakil,%20I%20have%20a%20legal%20query." class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">

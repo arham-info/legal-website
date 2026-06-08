@@ -1,402 +1,334 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Find an Expert Lawyer | Legal and Vakil</title>
-    <!-- Google Fonts -->
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap"
-        rel="stylesheet">
+    <title>Find Expert Lawyers You Can Trust | Legal & Vakil</title>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
-    <style>
-        .directory-header {
-            padding: 120px 0 60px;
-            background: linear-gradient(135deg, var(--primary) 0%, #001f3f 100%);
-            color: white;
-            text-align: center;
-        }
-
-        .filter-section {
-            padding: 40px 0;
-            background: #f8f9fa;
-            border-bottom: 1px solid #eee;
-        }
-
-        .filter-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: 20px;
-            align-items: flex-end;
-        }
-
-        .filter-box label {
-            display: block;
-            margin-bottom: 10px;
-            font-size: 14px;
-            font-weight: 600;
-            color: var(--primary);
-        }
-
-        .filter-box input,
-        .filter-box select {
-            width: 100%;
-            padding: 12px 15px;
-            border-radius: 8px;
-            border: 1px solid #ddd;
-            outline: none;
-            font-family: inherit;
-        }
-
-        .experts-directory {
-            padding: 60px 0;
-        }
-
-        .experts-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 30px;
-        }
-
-        .expert-card {
-            background: white;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: var(--shadow);
-            text-align: center;
-            transition: 0.3s;
-            position: relative;
-            overflow: hidden;
-            border-top: 5px solid transparent;
-        }
-
-        .expert-card:hover {
-            transform: translateY(-10px);
-            border-top-color: var(--secondary);
-        }
-
-        .expert-card img {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 20px;
-            border: 4px solid #f0f4f8;
-        }
-
-        .expert-card .rating {
-            color: #f0ad4e;
-            margin-bottom: 10px;
-            font-size: 14px;
-        }
-
-        .expert-card h3 {
-            font-size: 20px;
-            margin-bottom: 5px;
-            color: var(--primary);
-        }
-
-        .expert-card p {
-            color: var(--text-muted);
-            font-size: 14px;
-            margin-bottom: 20px;
-        }
-
-        .badge-verified {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background: #e3fcef;
-            color: #00875a;
-            padding: 4px 10px;
-            border-radius: 4px;
-            font-size: 12px;
-            font-weight: 600;
-            text-transform: uppercase;
-        }
-
-        @media (max-width: 991px) {
-            .filter-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .filter-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
 </head>
-
 <body>
 
-    <!-- Header -->
+    <!-- Header / Navigation -->
     <header>
-        <nav class="container">
-            <a href="index.html" class="logo">LEGAL AND<span> VAKIL</span></a>
-            <ul class="nav-links">
-                <li><a href="services.html">Services</a></li>
-                <li><a href="lawyers.html" class="active">Find a Lawyer</a></li>
-                <li><a href="#">Property</a></li>
-                <li><a href="#">Business</a></li>
-                <li><a href="dashboard.html">Dashboard</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
-            </ul>
-            <div class="nav-btns">
-                <a href="#" class="btn btn-outline">Login</a>
-                <a href="#" class="btn btn-primary" style="margin-left: 10px;">Consult Now</a>
-            </div>
-            <div class="menu-toggle" id="mobile-menu"
-                style="display: none; font-size: 24px; cursor: pointer; color: var(--primary);">
-                <i class="fas fa-bars"></i>
-            </div>
-        </nav>
+        <div class="container" style="width: 100%;">
+            <nav>
+                <a href="index.html" class="logo-container">
+                    <div class="logo-icon">
+                        <img src="assets/logo.png" alt="Legal & Vakil Logo">
+                    </div>
+                    <div class="logo-text">
+                        <span class="logo-title">Legal & <span>Vakil</span></span>
+                        <span class="logo-subtitle">Your Legal Partner</span>
+                    </div>
+                </a>
+                
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="lawyers.html" class="active">Find Lawyers</a></li>
+                    <li class="dropdown">
+                        <a href="services.html">Services <i class="fas fa-chevron-down" style="font-size: 10px; margin-left: 2px;"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="service-details.html?service=marriage">Marriage Consultation</a></li>
+                            <li><a href="service-details.html?service=odr">ODR Services</a></li>
+                            <li><a href="service-details.html?service=property">Property Disputes</a></li>
+                            <li><a href="service-details.html?service=business">Corporate & Setup</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#">Legal Resources <i class="fas fa-chevron-down" style="font-size: 10px; margin-left: 2px;"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="faq.html">FAQ</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+
+                <div class="nav-actions">
+                    <a href="search.html" style="color: inherit; text-decoration: none;" aria-label="Search"><i class="fas fa-magnifying-glass search-icon-btn"></i></a>
+                    <a href="login.html" class="btn btn-outline" style="padding: 8px 18px; border-radius: 6px;">Login</a>
+                    <a href="signup.html" class="btn btn-primary" style="padding: 8px 18px; border-radius: 6px;">Sign Up</a>
+                </div>
+            </nav>
+        </div>
     </header>
 
     <!-- Directory Hero -->
-    <section class="directory-header">
-        <div class="container reveal-onload">
-            <h1>Find a Legal Professional</h1>
-            <p>Connect with verified lawyers and chartered accountants across India.</p>
+    <section class="directory-hero">
+        <div class="container">
+            <div class="service-hero-grid">
+                <div class="directory-hero-content reveal-onload">
+                    <h1>Find Expert Lawyers<br><span class="highlight">You Can Trust</span></h1>
+                    <p>Connect with experienced lawyers specialized in your legal matters.</p>
+                    <div class="directory-hero-bullets">
+                        <div class="directory-bullet-item">
+                            <i class="fas fa-circle-check"></i>
+                            <span>Verified & Experienced Lawyers</span>
+                        </div>
+                        <div class="directory-bullet-item">
+                            <i class="fas fa-circle-check"></i>
+                            <span>Specialized in Multiple Legal Areas</span>
+                        </div>
+                        <div class="directory-bullet-item">
+                            <i class="fas fa-circle-check"></i>
+                            <span>Confidential & Reliable Consultations</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Background Image wrapper on right side -->
+                <div class="reveal-onload" style="text-align: right;">
+                    <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=500" alt="Handshake legal" style="border-radius: var(--radius-md); max-height:220px; width:100%; object-fit:cover; border:1px solid rgba(255,255,255,0.1);">
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Filters Section -->
-    <section class="filter-section">
+    <!-- Stats Bar -->
+    <section class="directory-stats-bar">
         <div class="container">
-            <div class="filter-grid">
-                <div class="filter-box">
-                    <label>Search by Name</label>
-                    <input type="text" id="expert-search" placeholder="e.g. Vikram Sethi">
+            <div class="directory-stats-grid">
+                <div class="dir-stat-item">
+                    <strong>500+</strong>
+                    <span>Expert Lawyers</span>
                 </div>
-                <div class="filter-box">
-                    <label>Practice Area</label>
-                    <select id="expert-specialty">
-                        <option value="all">All Specialties</option>
-                        <option value="Corporate Law">Corporate Law</option>
-                        <option value="Taxation">Taxation & GST</option>
-                        <option value="Property Law">Property Law</option>
+                <div class="dir-stat-item">
+                    <strong>50K+</strong>
+                    <span>Happy Clients</span>
+                </div>
+                <div class="dir-stat-item">
+                    <strong>4.8 / 5</strong>
+                    <span>Average Rating</span>
+                </div>
+                <div class="dir-stat-item">
+                    <strong>24/7</strong>
+                    <span>Support</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sticky Filters Bar -->
+    <section class="filters-bar">
+        <div class="container">
+            <div class="filters-flex">
+                <div class="filter-input-wrapper">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="dir-search" placeholder="Search by name, expertise or keyword...">
+                </div>
+                <div>
+                    <select id="dir-specialty">
+                        <option value="all">All Specializations</option>
                         <option value="Criminal Law">Criminal Law</option>
                         <option value="Family Law">Family Law</option>
-                        <option value="Consumer Court">Consumer Court</option>
-                        <option value="Compliance">Compliance</option>
+                        <option value="Property Law">Property Law</option>
+                        <option value="Corporate Law">Corporate Law</option>
+                        <option value="IP Law">IP Law</option>
                     </select>
                 </div>
-                <div class="filter-box">
-                    <label>Experience</label>
-                    <select id="expert-exp">
-                        <option value="all">All Experience</option>
-                        <option value="0-5">0 - 5 Years</option>
-                        <option value="5-10">5 - 10 Years</option>
-                        <option value="10+">10+ Years</option>
-                    </select>
-                </div>
-                <div class="filter-box">
-                    <label>Sort By</label>
-                    <select id="expert-sort">
-                        <option value="rating">Top Rated</option>
-                        <option value="experience">Most Experienced</option>
+                <div>
+                    <select id="dir-sort">
+                        <option value="rating">Sort by Rating</option>
+                        <option value="experience">Sort by Experience</option>
                     </select>
                 </div>
             </div>
         </div>
     </section>
 
-
-    <!-- Featured Experts -->
-    <section class="experts reveal">
+    <!-- Directory Listings -->
+    <section class="directory-section">
         <div class="container">
-            <div class="section-head">
-                <h2>Our Top Legal Experts</h2>
-                <p>Consult with the most highly-rated professionals in the industry</p>
+            <div class="section-head" style="text-align: left; margin-bottom: 30px;">
+                <h2 style="font-size:24px;">Top Rated Lawyers</h2>
             </div>
-            <div class="experts-grid">
-                <div class="expert-card">
-                    <a href="lawyer-details.html?id=vikram"><img
-                            src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=200"
-                            alt="Expert 1"></a>
-                    <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                            class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                    <h3>Adv. Vikram Sethi</h3>
-                    <p>Corporate Law | 15+ Yrs Exp</p>
-                    <a href="lawyer-details.html?id=vikram" class="btn btn-outline book-call-btn" data-lawyer="Adv. Vikram Sethi" style="margin-top: 15px;">Book
-                        Call</a>
+            
+            <!-- Dynamic container populated by JS -->
+            <div class="directory-layout-flex" id="directory-lawyers-container">
+                <!-- Javascript will load lawyer-card-horizontal templates here -->
+            </div>
+            
+            <!-- Bottom Matched Banner -->
+            <div class="match-banner reveal">
+                <div class="match-banner-text">
+                    <h4>Can't find the right lawyer?</h4>
+                    <p>Let us help you match with the best lawyer for your case.</p>
                 </div>
-                <div class="expert-card">
-                    <a href="lawyer-details.html?id=neha"><img
-                            src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=200"
-                            alt="Expert 2"></a>
-                    <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                            class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                <a href="contact.html" class="btn btn-primary">Get Matched Now</a>
+            </div>
+
+            <!-- Bottom features icons list -->
+            <div class="directory-features-row">
+                <div class="dir-feature-item">
+                    <div class="dir-feature-icon"><i class="fas fa-user-check"></i></div>
+                    <div class="dir-feature-info">
+                        <h5>Verified Lawyers</h5>
+                        <p>All lawyers are verified and experienced</p>
                     </div>
-                    <h3>CA Neha Gupta</h3>
-                    <p>Taxation & GST | 10+ Yrs Exp</p>
-                    <a href="lawyer-details.html?id=neha" class="btn btn-outline book-call-btn" data-lawyer="CA Neha Gupta" style="margin-top: 15px;">Book
-                        Call</a>
                 </div>
-                <div class="expert-card">
-                    <a href="lawyer-details.html?id=rajesh"><img
-                            src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=200"
-                            alt="Expert 3"></a>
-                    <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                            class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                    <h3>Adv. Rajesh Mehra</h3>
-                    <p>Property & Civil | 20+ Yrs Exp</p>
-                    <a href="lawyer-details.html?id=rajesh" class="btn btn-outline book-call-btn" data-lawyer="Adv. Rajesh Mehra" style="margin-top: 15px;">Book
-                        Call</a>
+                <div class="dir-feature-item">
+                    <div class="dir-feature-icon"><i class="fas fa-tags"></i></div>
+                    <div class="dir-feature-info">
+                        <h5>Fixed Consultation Fee</h5>
+                        <p>Transparent pricing, no hidden charges</p>
+                    </div>
                 </div>
-                <div class="expert-card">
-                    <a href="lawyer-details.html?id=anjali"><img
-                            src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&q=80&w=200"
-                            alt="Expert 4"></a>
-                    <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                            class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                    <h3>CS Anjali Verma</h3>
-                    <p>Compliance | 8+ Yrs Exp</p>
-                    <a href="lawyer-details.html?id=anjali" class="btn btn-outline book-call-btn" data-lawyer="CS Anjali Verma" style="margin-top: 15px;">Book
-                        Call</a>
+                <div class="dir-feature-item">
+                    <div class="dir-feature-icon"><i class="fas fa-shield-halved"></i></div>
+                    <div class="dir-feature-info">
+                        <h5>Secure & Confidential</h5>
+                        <p>Your data and case details are safe</p>
+                    </div>
+                </div>
+                <div class="dir-feature-item">
+                    <div class="dir-feature-icon"><i class="fas fa-headset"></i></div>
+                    <div class="dir-feature-info">
+                        <h5>Quick Support</h5>
+                        <p>Get help from our team anytime</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer style="padding: 60px 0 20px; background: var(--primary); color: white;">
+    <footer>
         <div class="container">
-            <div
-                style="text-align: center; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 30px; margin-bottom: 20px;">
-                <a href="index.html" class="logo" style="color: #fff;">LEGAL AND<span> VAKIL</span></a>
-                <p style="max-width: 500px; margin: 15px auto;">Directly connect with top legal minds for comprehensive
-                    advice.</p>
+            <div class="footer-grid">
+                <!-- Col 1 -->
+                <div class="footer-col" style="grid-column: span 1.5;">
+                    <a href="index.html" class="logo-container" style="margin-bottom: 20px; display: inline-flex;">
+                        <div class="logo-icon">
+                            <img src="assets/logo.png" alt="Legal & Vakil Logo">
+                        </div>
+                        <div class="logo-text">
+                            <span class="logo-title">Legal & <span>Vakil</span></span>
+                        </div>
+                    </a>
+                    <p style="font-size: 13.5px; margin-bottom: 25px;">Your trusted legal partner for every legal issue. We're here to protect your rights.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Col 2 -->
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="lawyers.html">Find Lawyers</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Col 3 -->
+                <div class="footer-col">
+                    <h4>Our Services</h4>
+                    <ul>
+                        <li><a href="service-details.html?service=marriage">Marriage Consultation</a></li>
+                        <li><a href="service-details.html?service=odr">ODR Services</a></li>
+                        <li><a href="service-details.html?service=property">Property Disputes</a></li>
+                        <li><a href="service-details.html?service=debt">Debt & Loan Issues</a></li>
+                        <li><a href="services.html">View All Services</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Col 4 -->
+                <div class="footer-col">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="contact.html">Help Center</a></li>
+                        <li><a href="faq.html">FAQs</a></li>
+                        <li><a href="terms.html">Terms & Conditions</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="refund.html">Refund Policy</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Col 5 -->
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <ul class="contact-info-list">
+                        <li><i class="fas fa-phone"></i> <span>+91 92965 00296</span></li>
+                        <li><i class="fas fa-envelope"></i> <span>admin@legalandvakil.com</span></li>
+                        <li><i class="fas fa-location-dot"></i> <span>Head Office:<br>New Delhi</span></li>
+                    </ul>
+                </div>
             </div>
-            <div class="footer-bottom" style="text-align: center; opacity: 0.6; font-size: 14px;">
-                &copy; 2026 Legal and Vakil. All rights reserved.
+            
+            <div class="footer-bottom">
+                &copy; 2025 Legal & Vakil. All Rights Reserved.
             </div>
         </div>
     </footer>
 
-    <script src="script.js"></script>
-
-    <!-- Contact Modal -->
-    <div id="contactModal" class="modal">
+    <!-- Booking Modal -->
+    <div id="bookingModal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
-                <h2 id="modalLawyerName">Consult with Expert</h2>
-                <span class="close-modal">&times;</span>
+                <h3>Book Consultation</h3>
+                <button class="close-modal">&times;</button>
             </div>
             <div class="modal-body">
-                <form id="modalContactForm">
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-                        <div class="form-group">
-                            <label for="modalFirstName">First Name</label>
-                            <input type="text" id="modalFirstName" placeholder="John" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="modalLastName">Last Name</label>
-                            <input type="text" id="modalLastName" placeholder="Doe" required>
-                        </div>
+                <form id="bookingForm">
+                    <input type="hidden" id="modal-lawyer-id" value="">
+                    <div class="form-group">
+                        <label for="book-name">Full Name</label>
+                        <input type="text" id="book-name" placeholder="John Doe" required>
                     </div>
                     <div class="form-group">
-                        <label for="modalEmail">Email Address</label>
-                        <input type="email" id="modalEmail" placeholder="john@example.com" required>
+                        <label for="book-email">Email Address</label>
+                        <input type="email" id="book-email" placeholder="john@example.com" required>
                     </div>
                     <div class="form-group">
-                        <label for="modalPhone">Phone Number</label>
-                        <input type="tel" id="modalPhone" placeholder="+91 6207 290 258" required>
+                        <label for="book-phone">Phone Number</label>
+                        <input type="tel" id="book-phone" placeholder="+91 92965 00296" required>
                     </div>
                     <div class="form-group">
-                        <label for="modalSubject">Inquiry Subject</label>
-                        <select id="modalSubject">
+                        <label for="book-subject">Inquiry Subject</label>
+                        <select id="book-subject" required>
                             <option value="" disabled selected>Select Inquiry Subject</option>
-                            <option value="debt">Debt Issue</option>
-                            <option value="marriage">Marriage Consultation</option>
-                            <option value="loan">Loan Settlement</option>
-                            <option value="gst">GST Filing & Issues</option>
-                            <option value="notary">Notary Services</option>
-                            <option value="rera">RERA Compliance</option>
-                            <option value="cyber">Cyber Law</option>
-                            <option value="ip">Intellectual Property</option>
-                            <option value="employment">Employment Law</option>
-                            <option value="rental">Rental Agreements</option>
-                            <option value="will">Will & Succession</option>
-                            <option value="consumer">Consumer Protection</option>
-                            <option value="business">Business Setup</option>
-                            <option value="tax">Tax & Compliance</option>
-                            <option value="other">Other</option>
+                            <option value="Marriage Consultation">Marriage Consultation</option>
+                            <option value="Online Dispute Resolution">Online Dispute Resolution</option>
+                            <option value="Property Disputes">Property Disputes</option>
+                            <option value="Business setup & Legal">Business setup & Legal</option>
+                            <option value="Criminal Defense">Criminal Defense</option>
+                            <option value="Debt & Loan Issues">Debt & Loan Issues</option>
+                            <option value="Trademark & Patents">Trademark & Patents</option>
+                            <option value="Other Legal Help">Other Legal Help</option>
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="modalMessage">Your Message</label>
-                        <textarea id="modalMessage" rows="4" placeholder="How can we help you?" required></textarea>
+                        <label for="book-message">Your Message</label>
+                        <textarea id="book-message" rows="4" placeholder="Briefly describe your legal requirement..." required></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary" style="width: 100%; padding: 15px;">Send Message</button>
+                    <button type="submit" class="btn btn-primary" style="width: 100%; padding: 14px;">Confirm & Book Call</button>
                 </form>
             </div>
         </div>
     </div>
 
-    <script>
-        // Modal Logic
-        const modal = document.getElementById("contactModal");
-        const closeBtn = document.querySelector(".close-modal");
+    <!-- Status Feedback Modal -->
+    <div id="statusModal" class="modal">
+        <div class="status-modal-content" id="status-modal-body">
+            <!-- Populated dynamically by JS -->
+        </div>
+    </div>
 
-        // Use event delegation for dynamically rendered cards
-        document.addEventListener('click', function(e) {
-            if (e.target && e.target.classList.contains('book-call-btn')) {
-                e.preventDefault();
-                const lawyerName = e.target.getAttribute('data-lawyer');
-                if (lawyerName) {
-                    document.getElementById('modalLawyerName').textContent = 'Consult with ' + lawyerName;
-                }
-                modal.style.display = "block";
-            }
-        });
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/919296500296?text=Hello%20Legal%20%26%20Vakil,%20I%20have%20a%20legal%20query." class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
-        closeBtn.onclick = function() {
-            modal.style.display = "none";
-        }
-
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
-
-        document.getElementById('modalContactForm').onsubmit = function(e) {
-            e.preventDefault();
-            const btn = this.querySelector('button');
-            const originalText = btn.textContent;
-            btn.disabled = true;
-            btn.textContent = 'Sending...';
-
-            // Prepare form data
-            const formData = {
-                name: document.getElementById('modalFirstName').value,
-                surname: document.getElementById('modalLastName').value,
-                email: document.getElementById('modalEmail').value,
-                phone: document.getElementById('modalPhone').value,
-                service: document.getElementById('modalSubject').value,
-                message: document.getElementById('modalMessage').value
-            };
-
-            // Call the global submission function
-            window.submitToGoogleSheet(formData).then(success => {
-                if (success) {
-                    alert('Success! Your request has been sent. The expert will contact you shortly.');
-                    modal.style.display = "none";
-                    this.reset();
-                } else {
-                    alert('Oops! Something went wrong. Please try again later.');
-                }
-                btn.disabled = false;
-                btn.textContent = originalText;
-            });
-        }
-    </script>
+    <!-- Main JavaScript -->
+    <script src="script.js"></script>
 </body>
-
 </html>

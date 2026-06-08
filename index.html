@@ -13,39 +13,38 @@
 
     <!-- Header / Navigation -->
     <header>
-        <div class="container" style="width: 100%;">
-            <nav>
-                <a href="index.html" class="logo-container">
-                    <div class="logo-icon">
-                        <img src="assets/logo.png" alt="Legal & Vakil Logo">
-                    </div>
-                    <div class="logo-text">
-                        <span class="logo-title">Legal & <span>Vakil</span></span>
-                        <span class="logo-subtitle">Your Legal Partner</span>
-                    </div>
-                </a>
-                
-                <ul class="nav-links">
-                    <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="lawyers.html">Find Lawyers</a></li>
-                    <li class="dropdown">
-                        <a href="services.html">Services <i class="fas fa-chevron-down" style="font-size: 10px; margin-left: 2px;"></i></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="service-details.html?service=marriage">Marriage Consultation</a></li>
-                            <li><a href="service-details.html?service=odr">ODR Services</a></li>
-                            <li><a href="service-details.html?service=property">Property Disputes</a></li>
-                            <li><a href="service-details.html?service=business">Corporate & Setup</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#">Legal Resources <i class="fas fa-chevron-down" style="font-size: 10px; margin-left: 2px;"></i></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="faq.html">FAQ</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
+        <nav class="container">
+            <a href="#" class="logo">LEGAL AND<span> VAKIL</span></a>
+            <ul class="nav-links">
+                <li><a href="services.html">Services</a></li>
+                <li><a href="lawyers.html">Find a Lawyer</a></li>
+                <li><a href="#">Property</a></li>
+                <li><a href="#">Business</a></li>
+                <li><a href="app.html">Download Our App</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+            <div class="nav-btns">
+                <a href="#" class="btn btn-outline">Login</a>
+                <a href="#" class="btn btn-primary" style="margin-left: 10px;">Consult Now</a>
+            </div>
+            <div class="menu-toggle" id="mobile-menu" style="display: none; font-size: 24px; cursor: pointer; color: var(--primary);">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero reveal-onload">
+        <div class="container hero-content">
+            <h1>Expert Legal Solutions<br>At Your Fingertips</h1>
+            <p>Connect with top-rated lawyers, CAs, and CSs for all your legal, tax, and compliance needs.</p>
+            <div class="search-box">
+                <input type="text" placeholder="Search for 'Company Registration' or 'Lawyers near me'...">
+                <button class="btn btn-primary">Search</button>
+            </div>
+        </div>
+    </section>
 
                 <div class="nav-actions">
                     <a href="search.html" style="color: inherit; text-decoration: none;" aria-label="Search"><i class="fas fa-magnifying-glass search-icon-btn"></i></a>
@@ -334,59 +333,14 @@
                     </div>
                 </a>
 
-                <!-- Lawyer 3 -->
-                <a href="lawyer-details.html?id=vikram" class="lawyer-card-vertical reveal">
-                    <div class="lawyer-img-wrapper">
-                        <img src="assets/Lawyer (3).webp" alt="Adv. Vikram Singh">
-                    </div>
-                    <div class="lawyer-info-body">
-                        <h4>Adv. Vikram Singh</h4>
-                        <span class="lawyer-specialty">Property Law Expert</span>
-                        <div class="lawyer-meta-row">
-                            <span class="lawyer-rating">
-                                <i class="fas fa-star"></i> 4.9 <span class="lawyer-reviews-count">(110)</span>
-                            </span>
-                            <span class="lawyer-exp">10+ Yrs Exp.</span>
-                        </div>
-                        <span class="btn btn-outline" style="width: 100%;">Consult Now</span>
-                    </div>
-                </a>
-
-                <!-- Lawyer 4 -->
-                <a href="lawyer-details.html?id=priya" class="lawyer-card-vertical reveal">
-                    <div class="lawyer-img-wrapper">
-                        <img src="assets/Lawyer (4).webp" alt="Adv. Priya Sharma">
-                    </div>
-                    <div class="lawyer-info-body">
-                        <h4>Adv. Priya Sharma</h4>
-                        <span class="lawyer-specialty">Corporate Law Expert</span>
-                        <div class="lawyer-meta-row">
-                            <span class="lawyer-rating">
-                                <i class="fas fa-star"></i> 4.8 <span class="lawyer-reviews-count">(85)</span>
-                            </span>
-                            <span class="lawyer-exp">7+ Yrs Exp.</span>
-                        </div>
-                        <span class="btn btn-outline" style="width: 100%;">Consult Now</span>
-                    </div>
-                </a>
-
-                <!-- Lawyer 5 -->
-                <a href="lawyer-details.html?id=arjun" class="lawyer-card-vertical reveal">
-                    <div class="lawyer-img-wrapper">
-                        <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=400" alt="Adv. Arjun Nair">
-                    </div>
-                    <div class="lawyer-info-body">
-                        <h4>Adv. Arjun Nair</h4>
-                        <span class="lawyer-specialty">IP Law Expert</span>
-                        <div class="lawyer-meta-row">
-                            <span class="lawyer-rating">
-                                <i class="fas fa-star"></i> 4.7 <span class="lawyer-reviews-count">(65)</span>
-                            </span>
-                            <span class="lawyer-exp">5+ Yrs Exp.</span>
-                        </div>
-                        <span class="btn btn-outline" style="width: 100%;">Consult Sales</span>
-                    </div>
-                </a>
+    <!-- App Promo -->
+    <section class="app-promo">
+        <div class="container">
+            <h2>Legal and Vakil on Your Phone</h2>
+            <p>Download our app to track your cases, upload documents, and chat with experts on the go.</p>
+            <div class="app-btns">
+                <a href="https://apps.apple.com/in/app/legal-and-vakil/id6764749848" class="app-btn"><i class="fab fa-apple"></i> App Store</a>
+                <a href="https://play.google.com/store/apps/details?id=com.arhaminfo.legalandvakil" class="app-btn"><i class="fab fa-google-play"></i> Google Play</a>
             </div>
         </div>
     </section>

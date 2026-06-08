@@ -132,7 +132,7 @@ document.addEventListener('DOMContentLoaded', () => {
             consultFee: 99,
             originalFee: 499,
             available: true,
-            img: 'https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&q=80&w=400',
+            img: 'assets/Lawyer (1).webp',
             bio: 'Adv. Rohan Mehta is a seasoned Criminal Law Expert with over 8 years of experience in handling complex criminal cases across various courts in India. He specializes in bail matters, FIR quashing, criminal defense, and high court litigation.<br><br>Known for his client-first approach, strategic thinking, and strong court presence, he has successfully represented hundreds of clients and helped them achieve favorable outcomes.',
             bullets: [
                 'Enrolled with Bar Council of Delhi (2016)',
@@ -173,7 +173,7 @@ document.addEventListener('DOMContentLoaded', () => {
             consultFee: 99,
             originalFee: 499,
             available: true,
-            img: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400',
+            img: 'assets/Lawyer (2).webp',
             bio: 'Adv. Sneha Kapoor specializes in matrimonial and family dispute cases, including divorce, alimony, child custody, and domestic violence. She offers compassionate yet firm representation for her clients.',
             bullets: [
                 'Enrolled with Bar Council of Maharashtra & Goa (2018)',
@@ -211,7 +211,7 @@ document.addEventListener('DOMContentLoaded', () => {
             consultFee: 99,
             originalFee: 499,
             available: true,
-            img: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=400',
+            img: 'assets/Lawyer (3).webp',
             bio: 'Adv. Vikram Singh has extensive experience in property verification, real estate documentation, RERA complaints, and handling property title litigation in civil courts.',
             bullets: [
                 'Enrolled with Bar Council of Delhi (2014)',
@@ -249,7 +249,7 @@ document.addEventListener('DOMContentLoaded', () => {
             consultFee: 99,
             originalFee: 499,
             available: true,
-            img: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=400',
+            img: 'assets/Lawyer (4).webp',
             bio: 'Adv. Priya Sharma advises startups, MSMEs and corporates on business setups, compliance, contract drafting, licensing, and mergers & acquisitions.',
             bullets: [
                 'Enrolled with Bar Council of Karnataka (2017)',
